@@ -1,0 +1,61 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    body {
+        
+    }
+}
+
+section {
+    height: 100vh;
+}
+
+.global-nav {
+    position: fixed;
+    top: 0px;
+    background: rgba(0,0,0,.7);
+    width: 100%;
+    height: 2em;
+    z-index: 100;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+#banner {
+    position: relative;
+    background-image: url("../img/mauro-tandoi-1428317-unsplash.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        text-align: center;
+        img {
+            border: 1px solid white;
+            border-radius: 50%;
+            background-image: linear-gradient(to top, white, black)
+        }
+        h1 {
+            font-size: 3.5em;
+        }
+    }
+}
