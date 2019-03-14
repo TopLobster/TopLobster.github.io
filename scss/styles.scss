@@ -223,6 +223,28 @@ ul.media-links {
 #projects {
     background: $llblue;
     border-bottom: 1em solid $lblue;
+    .grid-container {
+        width: 100%;
+        max-width: 50em;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 1em;
+        align-items: stretch;
+        justify-items: stretch;
+        h2 {
+            grid-column: 1 / span 2;
+        }
+        .proj-img {
+            background-image: linear-gradient(to bottom, $blue, $orange);
+            min-height: 8 em;
+        }
+        .proj-desc {
+            background: white;
+            padding: .5em;
+            border-radius: 0 .5em .5em 0;
+        }
+    }
 }
 
 #contact {
