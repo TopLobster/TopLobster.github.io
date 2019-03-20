@@ -1,36 +1,35 @@
-$orange: #db8a5f;
-$lorange: #ffd4bf;
-$llorange: #f5dfce;
-$blue: #008ab1;
-$lblue: #b2d7e7;
-$llblue: #dbe5e9;
-$main-text: #1f1f1f;
-$link-text: #0092b1;
+$color1: #0a6487; //blue
+$color2: #13a3c8; //light blue
+$color3: #374c4F; //slate blue
+$color4: #b8beba; //light slate blue
+$color5: #cf8b59; //orange
+$color6: #f4c3a3; //light orange
+$color-text: #231e1b; //dark brown
+
 $brown: #371b0d;
-$link-highlight: #6ec5e0;
 
 *, *:before, *:after {
     box-sizing: border-box;
     padding: 0;
 }
 
-@mixin primary-button($color) {
+@mixin main-button($color) {
     border: .1em solid $color;
     background-color: $color;
     border-radius: .5em;
-    color: $main-text;
+    color: $color-text;
     font-weight: 600;
     color: white;
     -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
     transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
-@mixin secondary-button($color) {
-    @include primary-button($color);
+@mixin alt-button($color) {
+    @include main-button($color);
     background-color: transparent;
 }
 
-@mixin darken-hvr($color) {
+@mixin darken-main-hvr($color) {
     background-color: darken($color, 10%);
     border-color: darken($color, 10%);
     cursor: pointer;
@@ -45,11 +44,22 @@ $link-highlight: #6ec5e0;
 @mixin text-field($color) {
     border: none;
     background-color: $color;
+    opacity: .5;
     border-radius: .5em;
     padding: .5em;
     font-size: .8em;
     line-height: 1.5;
     font-weight: 300;
+    -webkit-transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
+}
+
+@mixin parallax-bg($bg) {
+    background-image: url($bg);
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 *:focus {
@@ -60,58 +70,45 @@ html {
     height: 100%;
     width: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    color: $main-text;
+    font-size: 1em;
+    color: $color-text;
 }
 
 a, a:visited {
-    color: $link-text;
+    color: $color2;
     text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
-    color: $link-highlight;
+    color: $color1;
 }
 
-.button-main-bl {
-    @include primary-button($blue);
+.button-main-1 {
+    @include main-button($color1);
+}
+.button-main-1:hover {
+    @include darken-main-hvr($color1);
 }
 
-.button-main-or {
-    @include primary-button($orange);
+.button-alt-1 {
+    @include alt-button($color1);
+}
+.button-alt-1:hover {
+    @include darken-alt-hvr($color1);
 }
 
-.button-alt-bl {
-    @include secondary-button($blue);
+.button-main-2 {
+    @include main-button($color3);
+}
+.button-main-2:hover {
+    @include darken-main-hvr($color3);
 }
 
-.button-alt-or {
-    @include secondary-button($orange)
+.button-alt-2 {
+    @include alt-button($color3)
 }
-
-.button-main-bl:hover {
-    @include darken-hvr($blue);
-}
-
-.button-main-or:hover {
-    @include darken-hvr($orange);
-}
-
-.button-alt-bl:hover {
-    @include darken-alt-hvr($blue);
-}
-
-.button-alt-or:hover {
-    @include darken-alt-hvr($orange);
-}
-
-.button-alt {
-    height: 1.5em;
-    width: 8em;
-    border: .1em solid $orange;
-    background-color: $lorange;
-    border-radius: .25em;
-
+.button-alt-2:hover {
+    @include darken-alt-hvr($color3);
 }
 
 .global-nav {
@@ -140,7 +137,7 @@ a:hover, a:active, a:focus {
                 font-weight: 600;
             }
             a:hover {
-                color: $lblue;
+                color: $color4;
             }
         }
         li:last-child {
@@ -158,34 +155,29 @@ ul.media-links {
         text-decoration: none;
         height: 1em;
         padding: 0 .5em;
-        border-left: 1px solid $link-text;
+        border-left: 1px solid $color4;
         a {
             font-size: 2em;
             display: inline-block;
             margin: -.25em 0;
-            color: white;
+            color: $color4;
         }
         a:hover {
-            color: lightgray;
+            color: $color3;
         }
     }
     li:last-child {
-        border-right: 1px solid $link-text;
+        border-right: 1px solid $color4;
     }
 }
 
 #banner {
     position: relative;
-    background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
-    background-attachment: fixed;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include parallax-bg("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
     height: 100vh;
     min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    align-content: center;
     .global-nav {
         position: absolute;
         ul {
@@ -206,6 +198,15 @@ ul.media-links {
         h1 {
             font-size: 3.5em;
         }
+        ul li {
+            border: none;
+            a {
+                color: white;
+            }
+            a:hover, a:focus, a:active {
+                color: $color4;
+            }
+        }
     }
 }
 
@@ -216,44 +217,36 @@ ul.media-links {
 }
 
 #about-me {
-    background: $llorange;
-    border-bottom: 1em solid $lorange;
+    background: $color6;
 }
 
 #projects {
-    background: $llblue;
-    border-bottom: 1em solid $lblue;
-    .grid-container {
+    background: $color4;
+    .flex-container {
         width: 100%;
-        max-width: 50em;
+        display: flex;
+        flex-flow: row wrap;
         justify-content: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 1em;
-        align-items: stretch;
-        justify-items: stretch;
-        h2 {
-            grid-column: 1 / span 2;
+        align-items: flex-start;
+        .flex-child {
+            margin: 0 .5em 1em;
+            flex: 0 1 25em;
         }
         .proj-img {
-            background-image: linear-gradient(to bottom, $blue, $orange);
-            min-height: 8 em;
+            background-image: linear-gradient(to bottom, $color1, $color2);
+            border-radius: .25em .25em 0 0;
         }
         .proj-desc {
             background: white;
             padding: .5em;
-            border-radius: 0 .5em .5em 0;
+            border-radius: 0 0 .25em .25em;
         }
     }
 }
 
 #contact {
     height: 75vh;
-    background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
-    background-attachment: fixed;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include parallax-bg("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
     h1 {
         color: white;
         size: 3em;
@@ -281,33 +274,33 @@ ul.media-links {
         }
         input.form-text-field {
             width: 100%;
-            @include text-field($lblue);
+            @include text-field($color4);
         }
         textarea.form-text-field {
             grid-column: 1 / span 2;
             width: 100%;
-            @include text-field($lblue);
+            @include text-field($color4);
+        }
+        .form-text-field:focus {
+            opacity: 1;
+        }
+        input[type="submit"]:focus, input[type="reset"]:focus {
+            border-color: orange;
         }
     }
 }
 
 #footer {
-    background: $brown;
+    background: $color-text;
     position: relative;
-    color: $lorange;
+    color: $color4;
     text-align: center;
     p {
         font-size: .7em;
         text-align: center;
     }
     li {
-        border-color: $lorange;
-        a {
-            color: $llorange;
-        }
-        a:hover {
-            color: $orange;
-        }
+        border-color: $color4;
     }
     div {
         width: fit-content;
