@@ -8,6 +8,8 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="shortcut icon" type="image" href="img/favicon.ico">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script src="js/form-submission-handler.js" defer></script>
+        <script src="js/scripts.js" defer></script>
     </head>
     <body>
         <nav class="global-nav">
@@ -82,14 +84,20 @@
             </div>
         </section>
         <section id="contact">
-            <form class="job-offer">
+            <form class="gform" action="https://script.google.com/a/tech901.org/macros/s/AKfycbwSDpN3WC3GSe3SW_V8IymGZvGmSZh1uHTx9sGaug/exec" method="POST">
                 <h1>Contact Me!</h1>
-                <input type="text" placeholder="Name" class="form-text-field">
-                <input type="email" placeholder="Email" class="form-text-field">
-                <textarea class="form-text-field" placeholder="Your message..." class="form-text-field"></textarea>
-                <input type="submit" class="button-main-2">
+                <input type="text" name="name" placeholder="Name" class="form-text-field" value="" autocomplete="name">
+                <input type="email" name="email" placeholder="Email" 
+                class="form-text-field"value="" autocomplete="email">
+                <input class="msg-title" type="text" name="title" placeholder="Title" value="">
+                <textarea class="form-text-field" name="message" placeholder="Your message..." class="form-text-field" value=""></textarea>
+                <input type="submit" value="Send" class="button-main-2">
                 <input type="reset" class="button-alt-2">
             </form>
+            <div style="display:none" class="thankyou_message">
+                <h1><em>Thank you</em> for contacting me! I'll get back to you when I can.
+                </h1>
+            </div>
         </section>
         <footer id="footer">
             <div>
