@@ -186,7 +186,8 @@ ul.media-links li:last-child {
   position: relative;
   background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-position-x: 50%;
+  background-position-y: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -293,7 +294,8 @@ ul.media-links li:last-child {
   height: 75vh;
   background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-position-x: 50%;
+  background-position-y: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   display: -webkit-box;
