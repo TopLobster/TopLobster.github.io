@@ -149,12 +149,12 @@ a:hover, a:active, a:focus {
 }
 
 .global-nav.fixed {
-  -webkit-transform: translate(0, -3rem);
-          transform: translate(0, -3rem);
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  -webkit-transform: translate(0, -3.5rem);
+          transform: translate(0, -3.5rem);
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
 
 ul.media-links {
@@ -199,6 +199,8 @@ ul.media-links li:last-child {
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-transition: background-position 0s linear;
+  transition: background-position 0s linear;
   height: 100vh;
   min-height: 500px;
   display: -ms-grid;
@@ -307,6 +309,8 @@ ul.media-links li:last-child {
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-transition: background-position 0s linear;
+  transition: background-position 0s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

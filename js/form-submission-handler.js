@@ -97,6 +97,7 @@
             form.reset();
             document.querySelectorAll('.gform>.form-text-field').forEach((field) => field.classList.remove('filled'));
             var thankYouMessage = document.querySelector(".thankyou_message");
+            document.querySelector('.gform>input[type=submit]').blur();
             if (thankYouMessage) {
               thankYouMessage.style.opacity = 1;
               setTimeout(() => {
