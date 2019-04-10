@@ -1,3 +1,5 @@
+"use strict";
+
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(f){setTimeout(f, 1000/60);};
 
 const topBG = document.querySelector('#banner');
@@ -6,11 +8,10 @@ const body = document.querySelector('body');
 
 function shiftBackground() {
     // implements parallax effects
-    let windowHeight = window.innerHeight;
     let fromTop = window.pageYOffset;
-    let fromBot = body.scrollHeight - (fromTop + windowHeight);
-    topBG.style.backgroundPositionY = 50 + (fromTop / windowHeight * 50)+ "%";
-    botBG.style.backgroundPositionY = 50 + (-fromBot / windowHeight * 50) + "%";
+    let fromBot = body.scrollHeight - (fromTop + window.innerHeight);
+    topBG.style.backgroundPosition = "center bottom " + (fromTop * 0.5) + "px";
+    botBG.style.backgroundPosition = "center top " + (fromBot * 0.5) + "px";
 }
 
 window.addEventListener('scroll', () => {

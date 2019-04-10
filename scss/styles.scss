@@ -58,8 +58,7 @@ $brown: #371b0d;
 @mixin parallax-bg($bg) {
     background-image: url($bg);
     background-attachment: fixed;
-    background-position-x: 50%;
-    background-position-y: 50%;
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
 }
