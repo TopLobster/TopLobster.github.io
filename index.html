@@ -12,7 +12,7 @@
         <script src="js/scripts.js" defer></script>
     </head>
     <body>
-        <nav class="global-nav">
+        <nav class="fixed global-nav">
             <ul>
                 <li><a href="#banner">Home</a></li>
                 <li><a href="#about-me">About Me</a></li>
@@ -21,6 +21,13 @@
             </ul>
         </nav>
         <section id="banner">
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
             <div>
                 <img class="profile-picture" src="#" alt="profile-picture" width="60px" height="60px">
                 <h1>Jonathan</h1>
@@ -98,16 +105,16 @@
                 <h1><em>Thank you</em> for contacting me! I'll get back to you when I can.
                 </h1>
             </div>
+            <footer id="footer">
+                <div>
+                    <p>Media Links</p>
+                    <ul class="media-links">
+                        <li><a href="#" class="fab fa-github"></a></li>
+                        <li><a href="#" class="fab fa-linkedin"></a></li>
+                    </ul>
+                    <p>Background image courtesy<br>of <a href="https://unsplash.com/@matteocatanese">Unsplash Users</a></p>
+                </div>
+            </footer>
         </section>
-        <footer id="footer">
-            <div>
-                <p>Media Links</p>
-                <ul class="media-links">
-                    <li><a href="#" class="fab fa-github"></a></li>
-                    <li><a href="#" class="fab fa-linkedin"></a></li>
-                </ul>
-                <p>Background image courtesy<br>of <a href="https://unsplash.com/@matteocatanese">Unsplash Users</a></p>
-            </div>
-        </footer>
     </body>
 </html>

@@ -147,6 +147,15 @@ a:hover, a:active, a:focus {
   border-right: 1px solid white;
 }
 
+.global-nav.fixed {
+  -webkit-transform: translate(0, -3rem);
+          transform: translate(0, -3rem);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
 ul.media-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,7 +194,7 @@ ul.media-links li:last-child {
 #banner {
   position: relative;
   background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -236,7 +245,7 @@ ul.media-links li:last-child {
   color: #b8beba;
 }
 
-#about-me, #projects, #contact, #footer {
+#about-me, #projects, #footer {
   text-align: justify;
   padding: 1rem;
   display: -ms-grid;
@@ -291,8 +300,9 @@ ul.media-links li:last-child {
 
 #contact {
   height: 75vh;
+  min-height: 25rem;
   background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -301,14 +311,8 @@ ul.media-links li:last-child {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
 }
 
 #contact h1 {
@@ -319,9 +323,9 @@ ul.media-links li:last-child {
 
 #contact form.gform {
   width: 100%;
-  max-width: 32rem;
+  max-width: 34rem;
   height: 100%;
-  max-height: 16rem;
+  max-height: 18rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -329,6 +333,8 @@ ul.media-links li:last-child {
   -ms-grid-rows: 2rem 2rem 1fr 2rem;
       grid-template-rows: 2rem 2rem 1fr 2rem;
   grid-gap: .5rem;
+  padding: 1rem;
+  margin: auto;
 }
 
 #contact form.gform input, #contact form.gform textarea {
@@ -351,8 +357,7 @@ ul.media-links li:last-child {
   display: none;
 }
 
-#contact form.gform input.form-text-field {
-  width: 100%;
+#contact form.gform .form-text-field {
   border: none;
   background-color: #b8beba;
   opacity: .5;
@@ -363,6 +368,10 @@ ul.media-links li:last-child {
   font-weight: 300;
   -webkit-transition: opacity 250ms ease-in-out;
   transition: opacity 250ms ease-in-out;
+}
+
+#contact form.gform input.form-text-field {
+  width: 100%;
 }
 
 #contact form.gform textarea.form-text-field {
@@ -370,31 +379,19 @@ ul.media-links li:last-child {
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
   width: 100%;
-  border: none;
-  background-color: #b8beba;
-  opacity: .5;
-  border-radius: .5rem;
-  padding: .5rem;
-  font-size: .8rem;
-  line-height: 1.5;
-  font-weight: 300;
-  -webkit-transition: opacity 250ms ease-in-out;
-  transition: opacity 250ms ease-in-out;
 }
 
-#contact form.gform .form-text-field:focus {
+#contact form.gform .form-text-field:focus, #contact form.gform .filled {
   opacity: 1;
 }
 
-#contact form.gform input[type=submit]:focus, #contact form.gform input[type="reset"]:focus {
+#contact form.gform input[type=submit]:focus, #contact form.gform input[type=reset]:focus {
   border-color: orange;
 }
 
 #footer {
   background: #231e1b;
-  position: relative;
   color: #b8beba;
-  text-align: center;
 }
 
 #footer p {

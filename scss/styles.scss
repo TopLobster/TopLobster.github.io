@@ -57,7 +57,7 @@ $brown: #371b0d;
 
 @mixin parallax-bg($bg) {
     background-image: url($bg);
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -148,6 +148,11 @@ a:hover, a:active, a:focus {
     }
 }
 
+.global-nav.fixed {
+    transform: translate(0,-3rem);
+    transition: transform 1s ease-in-out;
+}
+
 ul.media-links {
     display: flex;
     align-items: center;
@@ -212,7 +217,7 @@ ul.media-links {
     }
 }
 
-#about-me, #projects, #contact, #footer {
+#about-me, #projects, #footer {
     text-align: justify;
     padding: 1rem;
     display: grid;
@@ -251,11 +256,10 @@ ul.media-links {
 
 #contact {
     height: 75vh;
+    min-height: (25rem);
     @include parallax-bg("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-flow: column;
     h1 {
         color: white;
         size: 3rem;
@@ -263,13 +267,15 @@ ul.media-links {
     }
     form.gform {
         width: 100%;
-        max-width: 32rem;
+        max-width: 34rem;
         height: 100%;
-        max-height: 16rem;
+        max-height: 18rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 2rem 2rem 1fr 2rem;
         grid-gap: .5rem;
+        padding: 1rem;
+        margin: auto;
         input, textarea {
             box-shadow: 0 0 5px #000;
         }
@@ -283,19 +289,20 @@ ul.media-links {
         .msg-title {
             display: none;
         }
+        .form-text-field {
+            @include text-field($color4);
+        }
         input.form-text-field {
             width: 100%;
-            @include text-field($color4);
         }
         textarea.form-text-field {
             grid-column: 1 / span 2;
             width: 100%;
-            @include text-field($color4);
         }
-        .form-text-field:focus {
+        .form-text-field:focus, .filled {
             opacity: 1;
         }
-        input[type=submit]:focus, input[type="reset"]:focus {
+        input[type=submit]:focus, input[type=reset]:focus {
             border-color: orange;
         }
     }
@@ -303,9 +310,7 @@ ul.media-links {
 
 #footer {
     background: $color-text;
-    position: relative;
     color: $color4;
-    text-align: center;
     p {
         font-size: .7rem;
         text-align: center;
