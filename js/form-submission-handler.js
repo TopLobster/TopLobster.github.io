@@ -1,6 +1,8 @@
 // Form submission handler from Github user dwyl.
 // https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/
 // Modified by me to handle empty fields and custom events after form submission.
+"use strict";
+
 (function() {
     function validEmail(email) {
       var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -9,10 +11,10 @@
   
     function validateHuman(honeypot) {
       if (honeypot) {  //if hidden form filled up
-        console.log("Robot Detected!");
+        // console.log("Robot Detected!");
         return true;
       } else {
-        console.log("Welcome Human!");
+        // console.log("Welcome Human!");
       }
     }
   
@@ -58,7 +60,7 @@
       formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
       formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
   
-      console.log(formData);
+      // console.log(formData);
       return formData;
     }
   
@@ -72,7 +74,7 @@
       }
 
       if (!data.name || !data.message || !data.email) { // if form elements are empty
-          console.log("Not all fields are filled")
+          // console.log("Not all fields are filled")
           return false;
       }
   
@@ -90,20 +92,15 @@
         // xhr.withCredentials = true;
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function() {
-            console.log(xhr.status, xhr.statusText);
-            console.log(xhr.responseText);
+            // console.log(xhr.status, xhr.statusText);
+            // console.log(xhr.responseText);
             form.reset();
-            var formElements = form.querySelector(".form-elements")
-            if (formElements) {
-              formElements.style.display = "none"; // hide form
-            }
+            document.querySelectorAll('.gform>.form-text-field').forEach((field) => field.classList.remove('filled'));
             var thankYouMessage = document.querySelector(".thankyou_message");
             if (thankYouMessage) {
-              form.style.display = "none";
-              thankYouMessage.style.display = "block";
+              thankYouMessage.style.opacity = 1;
               setTimeout(() => {
-                form.style.display = "grid";
-                thankYouMessage.style.display = "none";
+                thankYouMessage.style.opacity = 0;
               }, 5000);
             }
             return;
@@ -117,13 +114,13 @@
     }
     
     function loaded() {
-      console.log("Contact form submission handler loaded successfully.");
+      // console.log("Contact form submission handler loaded successfully.");
       // bind to the submit event of our form
       var forms = document.querySelectorAll("form.gform");
       for (var i = 0; i < forms.length; i++) {
         forms[i].addEventListener("submit", handleFormSubmit, false);
       }
-    };
+    }
     document.addEventListener("DOMContentLoaded", loaded, false);
   
     function disableAllButtons(form) {

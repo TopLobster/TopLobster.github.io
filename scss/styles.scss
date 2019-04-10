@@ -73,6 +73,7 @@ html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1rem;
     color: $color-text;
+    scroll-behavior: smooth;
 }
 
 a, a:visited {
@@ -138,7 +139,7 @@ a:hover, a:active, a:focus {
                 color: white;
                 font-weight: 600;
             }
-            a:hover {
+            a:hover, a:focus {
                 color: $color4;
             }
         }
@@ -255,24 +256,26 @@ ul.media-links {
 }
 
 #contact {
-    height: 75vh;
-    min-height: (25rem);
+    height: 100vh;
+    min-height: (27rem);
     @include parallax-bg("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
     display: flex;
     flex-flow: column;
+    transition: transform 1s ease-in-out;
     h1 {
         color: white;
         size: 3rem;
         text-shadow: 0 0 .05rem #000;
+        text-align: center;
     }
     form.gform {
         width: 100%;
         max-width: 34rem;
         height: 100%;
-        max-height: 18rem;
+        max-height: 34rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 2rem 2rem 1fr 2rem;
+        grid-template-rows: 2rem 2rem 1fr 2rem 4rem;
         grid-gap: .5rem;
         padding: 1rem;
         margin: auto;
@@ -304,6 +307,10 @@ ul.media-links {
         }
         input[type=submit]:focus, input[type=reset]:focus {
             border-color: orange;
+        }
+        .thankyou_message {
+            opacity: 0;
+            transition: opacity 500ms ease-in-out;
         }
     }
 }

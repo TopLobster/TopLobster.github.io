@@ -15,6 +15,7 @@ html {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1rem;
   color: #231e1b;
+  scroll-behavior: smooth;
 }
 
 a, a:visited {
@@ -139,7 +140,7 @@ a:hover, a:active, a:focus {
   font-weight: 600;
 }
 
-.global-nav ul li a:hover {
+.global-nav ul li a:hover, .global-nav ul li a:focus {
   color: #b8beba;
 }
 
@@ -299,8 +300,8 @@ ul.media-links li:last-child {
 }
 
 #contact {
-  height: 75vh;
-  min-height: 25rem;
+  height: 100vh;
+  min-height: 27rem;
   background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
   background-attachment: scroll;
   background-position: center bottom;
@@ -313,25 +314,30 @@ ul.media-links li:last-child {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
 #contact h1 {
   color: white;
   size: 3rem;
   text-shadow: 0 0 .05rem #000;
+  text-align: center;
 }
 
 #contact form.gform {
   width: 100%;
   max-width: 34rem;
   height: 100%;
-  max-height: 18rem;
+  max-height: 34rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 2rem 2rem 1fr 2rem;
-      grid-template-rows: 2rem 2rem 1fr 2rem;
+  -ms-grid-rows: 2rem 2rem 1fr 2rem 4rem;
+      grid-template-rows: 2rem 2rem 1fr 2rem 4rem;
   grid-gap: .5rem;
   padding: 1rem;
   margin: auto;
@@ -387,6 +393,12 @@ ul.media-links li:last-child {
 
 #contact form.gform input[type=submit]:focus, #contact form.gform input[type=reset]:focus {
   border-color: orange;
+}
+
+#contact form.gform .thankyou_message {
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
 }
 
 #footer {
