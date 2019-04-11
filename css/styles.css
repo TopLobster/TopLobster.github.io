@@ -5,6 +5,10 @@
   font-family: inherit;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 *:focus {
   outline: none !important;
 }
@@ -256,11 +260,56 @@ ul.media-links li:last-child {
 }
 
 #about-me {
-  background: #f4c3a3;
+  background: #b8beba;
+  color: #231e1b;
+}
+
+#about-me .skills-lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#about-me .skills-lists ul {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 15rem;
+          flex: 1 0 15rem;
+}
+
+#about-me .skills-lists ul li:first-child {
+  font-family: inherit;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+}
+
+#about-me .skills-lists ul li:first-child i {
+  font-size: 1.5rem;
+}
+
+#about-me .skills-lists ul li {
+  font-family: monospace;
+  list-style-type: none;
+  text-align: center;
 }
 
 #projects {
-  background: #b8beba;
+  background: #61868b;
+  color: #231e1b;
 }
 
 #projects .flex-container {
@@ -281,18 +330,25 @@ ul.media-links li:last-child {
 }
 
 #projects .flex-container .flex-child {
-  margin: 0 .25rem 1rem;
+  margin: 0 .5rem 1rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 25rem;
           flex: 1 1 25rem;
   max-width: 32rem;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+  -webkit-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+  opacity: 1;
 }
 
 #projects .flex-container .proj-img {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#0a6487), to(#13a3c8));
-  background-image: linear-gradient(to bottom, #0a6487, #13a3c8);
+  height: auto;
   border-radius: .25rem .25rem 0 0;
-  height: 20rem;
+  width: auto;
+  width: 32rem;
+  overflow: hidden;
 }
 
 #projects .flex-container .proj-desc {
@@ -370,6 +426,7 @@ ul.media-links li:last-child {
 #contact form.gform .form-text-field {
   border: none;
   background-color: #b8beba;
+  color: #231e1b;
   opacity: .5;
   border-radius: .5rem;
   padding: .5rem;

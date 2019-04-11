@@ -4,7 +4,7 @@ $color3: #374c4F; //slate blue
 $color4: #b8beba; //light slate blue
 $color5: #cf8b59; //orange
 $color6: #f4c3a3; //light orange
-$color-text: #231e1b; //dark brown
+$color7: #231e1b; //dark brown
 
 $brown: #371b0d;
 
@@ -14,11 +14,15 @@ $brown: #371b0d;
     font-family: inherit;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 @mixin main-button($color) {
     border: .1rem solid $color;
     background-color: $color;
     border-radius: .5rem;
-    color: $color-text;
+    color: $color7;
     font-weight: 600;
     color: white;
     -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
@@ -45,6 +49,7 @@ $brown: #371b0d;
 @mixin text-field($color) {
     border: none;
     background-color: $color;
+    color: $color7;
     opacity: .5;
     border-radius: .5rem;
     padding: .5rem;
@@ -73,7 +78,7 @@ html {
     width: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1rem;
-    color: $color-text;
+    color: $color7;
     scroll-behavior: smooth;
 }
 
@@ -226,12 +231,38 @@ ul.media-links {
 }
 
 #about-me {
-    background: $color6;
+    background: $color4;
+    color: $color7;
+    .skills-lists {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        ul {
+            flex: 1 0 15rem;
+            li:first-child {
+                font-family: inherit;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                list-style-type: none;
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+            li {
+                font-family: monospace;
+                list-style-type: none;
+                text-align: center;
+            }
+        }
+    }
 
 }
 
 #projects {
-    background: $color4;
+    background: lighten($color3, 20%);
+    color: $color7;
     .flex-container {
         width: 100%;
         display: flex;
@@ -239,14 +270,20 @@ ul.media-links {
         justify-content: center;
         align-items: flex-start;
         .flex-child {
-            margin: 0 .25rem 1rem;
+            margin: 0 .5rem 1rem;
             flex: 1 1 25rem;
             max-width: 32rem;
+            border-radius: .5rem;
+            box-shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
+            transition: opacity 1s linear;
+            opacity: 1;
         }
         .proj-img {
-            background-image: linear-gradient(to bottom, $color1, $color2);
+            height: auto;
             border-radius: .25rem .25rem 0 0;
-            height: 20rem;
+            width: auto;
+            width: 32rem;
+            overflow: hidden;
         }
         .proj-desc {
             background: white;
@@ -317,7 +354,7 @@ ul.media-links {
 }
 
 #footer {
-    background: $color-text;
+    background: $color7;
     color: $color4;
     p {
         font-size: .7rem;

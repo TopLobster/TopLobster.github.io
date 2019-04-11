@@ -13,8 +13,8 @@ function shiftBackground() {
     // implements parallax effects
     let fromTop = window.pageYOffset;
     let fromBot = body.scrollHeight - (fromTop + window.innerHeight);
-    topBG.style.backgroundPosition = "center bottom " + (-fromTop * 0.5) + "px";
-    botBG.style.backgroundPosition = "center top " + (-fromBot * 0.5) + "px";
+    topBG.style.backgroundPosition = "center bottom " + (-fromTop * 0.7) + "px";
+    botBG.style.backgroundPosition = "center top " + (-fromBot * 0.7) + "px";
 }
 
 window.addEventListener('scroll', () => {
@@ -32,18 +32,35 @@ function remNav() {
 
 const bannerIO = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
-        if (entry.intersectionRatio >= 0.75) {
+        if (entry.intersectionRatio >= 0.5) {
             remNav();
         }
-        if (entry.intersectionRatio <= 0.75) {
+        if (entry.intersectionRatio <= 0.5) {
             addNav();
         }
     });
 }, {
-    threshold: [0.75]
+    threshold: [0.5]
 });
 
 bannerIO.observe(document.querySelector('#banner'));
+
+const lazyLoader = target => {
+    const io = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            // .. do something
+            if (entry.isIntersecting) {
+                let img = entry.target;
+                let src = img.getAttribute('src-lazy');
+
+                observer.disconnect();
+            }
+        });
+    });
+    io.observe(target);
+};
+
+lazyLoader(document.querySelectorAll(''));
 
 /* Keep opacity on filled form element if losing focus */
 document.querySelectorAll('.gform>.form-text-field').forEach((field) => {
