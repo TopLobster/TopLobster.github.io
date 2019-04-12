@@ -198,19 +198,29 @@ ul.media-links li:last-child {
 
 #banner {
   position: relative;
-  background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
-  background-attachment: scroll;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-transition: background-position 0s linear;
-  transition: background-position 0s linear;
   height: 100vh;
   min-height: 500px;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
+  overflow: hidden;
+}
+
+#banner .background {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: translate 0s linear;
+  transition: translate 0s linear;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 #banner .global-nav {
@@ -337,21 +347,32 @@ ul.media-links li:last-child {
 }
 
 #projects .flex-container .project {
+  display: block;
   margin: 0 2rem 4rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 30rem;
           flex: 1 1 30rem;
   max-width: 40rem;
   height: 25rem;
-  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
-          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
-  -webkit-transition: opacity 1s linear, -webkit-transform 1s ease-out;
-  transition: opacity 1s linear, -webkit-transform 1s ease-out;
-  transition: opacity 1s linear, transform 1s ease-out;
-  transition: opacity 1s linear, transform 1s ease-out, -webkit-transform 1s ease-out;
   opacity: 1;
   border-radius: .5rem;
   position: relative;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transform: perspective(1px);
+          transform: perspective(1px);
+}
+
+#projects .flex-container .project * {
+  -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
+  transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out;
+  -webkit-transform: translate(-100vw, 0);
+          transform: translate(-100vw, 0);
+  opacity: 0;
 }
 
 #projects .flex-container .project .proj-img {
@@ -359,7 +380,9 @@ ul.media-links li:last-child {
   width: 100%;
   border-radius: .5rem;
   background-size: cover;
-  background-image: url("https://picsum.photos/500/?random");
+  background-position: center;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
 }
 
 #projects .flex-container .project .proj-img-small {
@@ -373,29 +396,27 @@ ul.media-links li:last-child {
   bottom: 10px;
   left: -1rem;
   right: 10%;
-  opacity: 0.9;
 }
 
 #projects .flex-container .project .proj-desc-small {
   border-radius: 0 0 .5rem .5rem;
 }
 
-#projects .flex-container .proj-move {
+#projects .flex-container .proj-move * {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
-  -webkit-transform: translate(-100vw, 0);
-          transform: translate(-100vw, 0);
+}
+
+#projects .flex-container .project:hover {
+  -webkit-transform: perspective(1.1px);
+          transform: perspective(1.1px);
 }
 
 #contact {
+  position: relative;
   height: 100vh;
   min-height: 27rem;
-  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
-  background-attachment: scroll;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-transition: background-position 0s linear;
-  transition: background-position 0s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,10 +424,22 @@ ul.media-links li:last-child {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+#contact .background {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: translate 0s linear;
+  transition: translate 0s linear;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 #contact h1 {

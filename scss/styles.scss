@@ -61,12 +61,41 @@ $brown: #371b0d;
 }
 
 @mixin parallax-bg($bg) {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
     background-image: url($bg);
-    background-attachment: scroll;
-    background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: background-position 0s linear;
+    background-position: center;
+    transition: translate 0s linear;
+    transform: translate(0,0);
+}
+
+@mixin fade-in-observe-left {
+    * {
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        transform: translate(-100vw,0);
+        opacity: 0;
+    }
+}
+
+@mixin fade-in-observe-move {
+    * {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+
+@mixin hover-grow {
+    transition: transform 300ms ease-in-out;
+    transform: perspective(1px);
+}
+
+@mixin hover-grow-hover {
+    transform: perspective(1.1px);
 }
 
 *:focus {
@@ -187,11 +216,15 @@ ul.media-links {
 
 #banner {
     position: relative;
-    @include parallax-bg("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
+    //@include parallax-bg("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
     height: 100vh;
     min-height: 500px;
     display: grid;
     align-content: center;
+    overflow: hidden;
+    .background {
+        @include parallax-bg('../img/matteo-catanese-424968-unsplash-top-blur.jpg');
+    }
     .global-nav {
         position: absolute;
         ul {
@@ -272,21 +305,23 @@ ul.media-links {
         justify-content: center;
         align-items: flex-start;
         .project {
+            display: block;
             margin: 0 2rem 4rem;
             flex: 1 1 30rem;
             max-width: 40rem;
             height: 25rem;
-            box-shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
-            transition: opacity 1s linear, transform 1s ease-out;
             opacity: 1;
             border-radius: .5rem;
             position: relative;
+            @include fade-in-observe-left;
+            @include hover-grow;
             .proj-img {
                 height: 100%;
                 width: 100%;
                 border-radius: .5rem;
                 background-size: cover;
-                background-image: url('https://picsum.photos/500/?random');
+                background-position: center;
+                box-shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
             }
             .proj-img-small {
                 border-radius: .5rem .5rem 0 0;
@@ -298,26 +333,30 @@ ul.media-links {
                 bottom: 10px;
                 left: -1rem;
                 right: 10%;
-                opacity: 0.9;
             }
             .proj-desc-small {
                 border-radius: 0 0 .5rem .5rem;
             }
         }
+
         .proj-move {
-            opacity: 1;
-            transform: translate(-100vw,0);
+            @include fade-in-observe-move;
+        }
+        .project:hover {
+            @include hover-grow-hover;
         }
     }
 }
 
 #contact {
+    position: relative;
     height: 100vh;
     min-height: (27rem);
-    @include parallax-bg("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
     display: flex;
     flex-flow: column;
-    transition: transform 1s ease-in-out;
+    .background {
+        @include parallax-bg("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
+    }
     h1 {
         color: white;
         size: 3rem;

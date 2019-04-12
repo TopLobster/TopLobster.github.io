@@ -2,19 +2,18 @@
 
 /* animate backgrounds on scroll */
 // TODO refactor to make this use Intersection Observers on each image for better performance
-// TODO refactor this with the HTML structure to make it use CSS transition: translate(); on a background image element for better performance
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(f){setTimeout(f, 1000/60);};
 
-const topBG = document.querySelector('#banner');
-const botBG = document.querySelector('#contact');
+const topBG = document.querySelector('#banner>.background');
+const botBG = document.querySelector('#contact>.background');
 const body = document.querySelector('body');
 
 function shiftBackground() {
     // implements parallax effects
     let fromTop = window.pageYOffset;
     let fromBot = body.scrollHeight - (fromTop + window.innerHeight);
-    topBG.style.backgroundPosition = "center bottom " + (-fromTop * 0.7) + "px";
-    botBG.style.backgroundPosition = "center top " + (-fromBot * 0.7) + "px";
+    topBG.style.transform = 'translate(0,' + (fromTop * 0.7) + "px)";
+    botBG.style.transform = 'translate(0,' + (-fromBot * 0.7) + "px)";
 }
 
 window.addEventListener('scroll', () => {
@@ -50,9 +49,10 @@ const lazyLoader = target => {
         entries.forEach((entry) => {
             // .. do something
             if (entry.isIntersecting) {
-                let img = entry.target;
+                let img = entry.target.firstElementChild;
                 let src = img.getAttribute('src-lazy');
-
+                img.style.backgroundImage = `url("` + src + `")`;
+                entry.target.classList.add("proj-move");
                 observer.disconnect();
             }
         });
@@ -78,8 +78,8 @@ document.querySelector('.gform>input[type=reset]').addEventListener('click', () 
     document.querySelectorAll('.gform>.form-text-field').forEach((field) => field.classList.remove('filled'));
 });
 
-window.onload(() => {
-    document.querySelector('#banner>div>img')
-    document.querySelector('#banner>div>h1')
-    document.querySelector('#banner>div>')
-});
+window.onload = () => {
+    document.querySelector('#banner>div>img');
+    document.querySelector('#banner>div>h1');
+    document.querySelector('#banner>div');
+};
