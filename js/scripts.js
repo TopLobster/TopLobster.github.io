@@ -60,7 +60,7 @@ const lazyLoader = target => {
     io.observe(target);
 };
 
-lazyLoader(document.querySelectorAll(''));
+document.querySelectorAll('.project').forEach(project => lazyLoader(project));
 
 /* Keep opacity on filled form element if losing focus */
 document.querySelectorAll('.gform>.form-text-field').forEach((field) => {
@@ -76,4 +76,10 @@ document.querySelectorAll('.gform>.form-text-field').forEach((field) => {
 /* Remove opacity when form reset from above*/
 document.querySelector('.gform>input[type=reset]').addEventListener('click', () => {
     document.querySelectorAll('.gform>.form-text-field').forEach((field) => field.classList.remove('filled'));
+});
+
+window.onload(() => {
+    document.querySelector('#banner>div>img')
+    document.querySelector('#banner>div>h1')
+    document.querySelector('#banner>div>')
 });
