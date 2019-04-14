@@ -1,7 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
+  margin: 0;
   font-family: inherit;
 }
 
@@ -16,9 +18,25 @@
 html {
   height: 100%;
   width: 100%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  overflow: hidden;
   font-size: 1rem;
+  font-family: Nunito;
   color: #231e1b;
+}
+
+@media (min-width: 1500px) {
+  html {
+    font-size: 1.33rem;
+  }
+}
+
+@media (min-width: 2240px) {
+  html {
+    font-size: 2rem;
+  }
+}
+
+main {
   scroll-behavior: smooth;
 }
 
@@ -106,7 +124,7 @@ a:hover, a:active, a:focus {
 .global-nav {
   position: fixed;
   top: 0px;
-  z-index: 2;
+  z-index: 1000;
   width: 100%;
 }
 
@@ -171,20 +189,21 @@ ul.media-links {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 1em 0;
 }
 
 ul.media-links li {
   display: inline-block;
   text-decoration: none;
-  height: 1rem;
-  padding: 0 .5rem;
+  height: 1em;
+  padding: 0 .5em;
   border-left: 1px solid #b8beba;
 }
 
 ul.media-links li a {
-  font-size: 2rem;
+  font-size: 2em;
   display: inline-block;
-  margin: -.5rem 0;
+  margin: -.25em 0;
   color: #b8beba;
 }
 
@@ -196,35 +215,74 @@ ul.media-links li:last-child {
   border-right: 1px solid #b8beba;
 }
 
-#banner {
-  position: relative;
+.parallax {
+  -webkit-perspective: 300px;
+          perspective: 300px;
   height: 100vh;
-  min-height: 500px;
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax section {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+}
+
+.parallax section div.content {
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+.parallax section div.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translateZ(-150px) scale(1.51);
+          transform: translateZ(-150px) scale(1.51);
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section.tdv {
+  -webkit-transform: translate3d(700px, -100px, -800px) rotateY(30deg);
+          transform: translate3d(700px, -100px, -800px) rotateY(30deg);
+}
+
+#banner, #contact {
+  z-index: 0;
+  height: 100vh;
+}
+
+#projects, #about-me {
+  z-index: 2;
+  min-height: 50vh;
+}
+
+.content {
+  padding: 1rem;
 }
 
 #banner .background {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
   background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  -webkit-transition: translate 0s linear;
-  transition: translate 0s linear;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+}
+
+#banner {
+  min-height: 25rem;
 }
 
 #banner .global-nav {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #banner .global-nav ul {
@@ -233,40 +291,46 @@ ul.media-links li:last-child {
           box-shadow: none;
 }
 
-#banner div {
+#banner .content {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateZ(150px) scale(0.5);
+          transform: translateZ(150px) scale(0.5);
+}
+
+#banner .content div {
   text-align: center;
   text-shadow: 0 0 5px #000;
   color: white;
 }
 
-#banner div img {
+#banner .content div img {
   border: 1px solid white;
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
 }
 
-#banner div h1 {
+#banner .content div h1 {
   font-size: 3.5rem;
 }
 
-#banner div ul li {
+#banner .content div ul li {
   border: none;
 }
 
-#banner div ul li a {
+#banner .content div ul li a {
   color: white;
 }
 
-#banner div ul li a:hover, #banner div ul li a:focus, #banner div ul li a:active {
+#banner .content div ul li a:hover, #banner .content div ul li a:focus, #banner .content div ul li a:active {
   color: #b8beba;
-}
-
-#about-me, #projects, #footer {
-  text-align: justify;
-  padding: 1rem;
-  display: -ms-grid;
-  display: grid;
 }
 
 #about-me {
@@ -274,7 +338,7 @@ ul.media-links li:last-child {
   color: #231e1b;
 }
 
-#about-me .skills-lists {
+#about-me .content .skills-lists {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,13 +351,14 @@ ul.media-links li:last-child {
           justify-content: center;
 }
 
-#about-me .skills-lists ul {
+#about-me .content .skills-lists ul {
+  margin: 0.5rem 0;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 15rem;
           flex: 1 0 15rem;
 }
 
-#about-me .skills-lists ul li:first-child {
+#about-me .content .skills-lists ul li:first-child {
   font-family: inherit;
   font-weight: 600;
   display: -webkit-box;
@@ -306,13 +371,14 @@ ul.media-links li:last-child {
       -ms-flex-pack: center;
           justify-content: center;
   list-style-type: none;
+  padding-bottom: .25rem;
 }
 
-#about-me .skills-lists ul li:first-child i {
+#about-me .content .skills-lists ul li:first-child i {
   font-size: 1.5rem;
 }
 
-#about-me .skills-lists ul li {
+#about-me .content .skills-lists ul li {
   font-family: monospace;
   font-size: 1.2rem;
   list-style-type: none;
@@ -322,14 +388,9 @@ ul.media-links li:last-child {
 #projects {
   background: #61868b;
   color: #231e1b;
-  padding: 0;
 }
 
-#projects h2 {
-  padding: 1rem;
-}
-
-#projects .flex-container {
+#projects .content .flex-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,9 +407,9 @@ ul.media-links li:last-child {
           align-items: flex-start;
 }
 
-#projects .flex-container .project {
+#projects .content .flex-container .project {
   display: block;
-  margin: 0 2rem 4rem;
+  margin: 2rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 30rem;
           flex: 1 1 30rem;
@@ -361,11 +422,11 @@ ul.media-links li:last-child {
   transition: -webkit-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
-  -webkit-transform: perspective(1px);
-          transform: perspective(1px);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
-#projects .flex-container .project * {
+#projects .content .flex-container .project * {
   -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
   transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
   transition: opacity 1s ease-out, transform 1s ease-out;
@@ -375,7 +436,7 @@ ul.media-links li:last-child {
   opacity: 0;
 }
 
-#projects .flex-container .project .proj-img {
+#projects .content .flex-container .project .proj-img {
   height: 100%;
   width: 100%;
   border-radius: .5rem;
@@ -385,11 +446,11 @@ ul.media-links li:last-child {
           box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
 }
 
-#projects .flex-container .project .proj-img-small {
+#projects .content .flex-container .project .proj-img-small {
   border-radius: .5rem .5rem 0 0;
 }
 
-#projects .flex-container .project .proj-desc {
+#projects .content .flex-container .project .proj-desc {
   background: white;
   padding: .5rem;
   position: absolute;
@@ -398,58 +459,44 @@ ul.media-links li:last-child {
   right: 10%;
 }
 
-#projects .flex-container .project .proj-desc-small {
+#projects .content .flex-container .project .proj-desc-small {
   border-radius: 0 0 .5rem .5rem;
 }
 
-#projects .flex-container .proj-move * {
+#projects .content .flex-container .proj-move * {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
   opacity: 1;
 }
 
-#projects .flex-container .project:hover {
-  -webkit-transform: perspective(1.1px);
-          transform: perspective(1.1px);
-}
-
-#contact {
-  position: relative;
-  height: 100vh;
-  min-height: 27rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+#projects .content .flex-container .project:hover {
+  -webkit-transform: translateZ(2000px);
+          transform: translateZ(2000px);
 }
 
 #contact .background {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
   background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  -webkit-transition: translate 0s linear;
-  transition: translate 0s linear;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
 }
 
-#contact h1 {
+#contact {
+  height: 100vh;
+  min-height: 20rem;
+}
+
+#contact .content {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+
+#contact .content h1 {
   color: white;
   size: 3rem;
   text-shadow: 0 0 .05rem #000;
   text-align: center;
 }
 
-#contact form.gform {
+#contact .content form.gform {
   width: 100%;
   max-width: 34rem;
   height: 100%;
@@ -465,12 +512,12 @@ ul.media-links li:last-child {
   margin: auto;
 }
 
-#contact form.gform input, #contact form.gform textarea {
+#contact .content form.gform input, #contact .content form.gform textarea {
   -webkit-box-shadow: 0 0 5px #000;
           box-shadow: 0 0 5px #000;
 }
 
-#contact form.gform h1 {
+#contact .content form.gform h1 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -481,11 +528,11 @@ ul.media-links li:last-child {
   text-shadow: 0 0 5px #000;
 }
 
-#contact form.gform .msg-title {
+#contact .content form.gform .msg-title {
   display: none;
 }
 
-#contact form.gform .form-text-field {
+#contact .content form.gform .form-text-field {
   border: none;
   background-color: #b8beba;
   color: #231e1b;
@@ -499,11 +546,11 @@ ul.media-links li:last-child {
   transition: opacity 250ms ease-in-out;
 }
 
-#contact form.gform input.form-text-field {
+#contact .content form.gform input.form-text-field {
   width: 100%;
 }
 
-#contact form.gform textarea.form-text-field {
+#contact .content form.gform textarea.form-text-field {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -511,15 +558,15 @@ ul.media-links li:last-child {
   resize: none;
 }
 
-#contact form.gform .form-text-field:focus, #contact form.gform .filled {
+#contact .content form.gform .form-text-field:focus, #contact .content form.gform .filled {
   opacity: 1;
 }
 
-#contact form.gform input[type=submit]:focus, #contact form.gform input[type=reset]:focus {
+#contact .content form.gform input[type=submit]:focus, #contact .content form.gform input[type=reset]:focus {
   border-color: orange;
 }
 
-#contact form.gform .thankyou_message {
+#contact .content form.gform .thankyou_message {
   opacity: 0;
   -webkit-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
@@ -528,18 +575,32 @@ ul.media-links li:last-child {
 #footer {
   background: #231e1b;
   color: #b8beba;
+  font-size: 1.5rem;
+  height: 30vh;
+  min-height: 10rem;
 }
 
-#footer p {
-  font-size: .7rem;
+#footer .content {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#footer .content p {
+  font-size: .7em;
   text-align: center;
 }
 
-#footer li {
+#footer .content li {
   border-color: #b8beba;
 }
 
-#footer div {
+#footer .content div {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

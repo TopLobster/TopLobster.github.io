@@ -3,10 +3,10 @@
     <head>
         <title>Jon's Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="shortcut icon" type="image" href="img/favicon.ico">
+        <!-- <link rel="shortcut icon" type="image" href="img/favicon.ico"> -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <script src="js/form-submission-handler.js" defer></script>
         <script src="js/scripts.js" defer></script>
@@ -20,137 +20,149 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <section id="banner">
-            <div class=background></div>
-            <nav class="global-nav">
-                <ul>
-                    <li><a href="#about-me">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div>
-                <img class="profile-picture" src="#" alt="profile-picture" width="60px" height="60px">
-                <h1>Jonathan</h1>
-                <p>Site under construction. Come back soon!</p>
-                <ul class="media-links">
-                    <li><a href="#" class="fab fa-github"></a></li>
-                    <li><a href="#" class="fab fa-linkedin"></a></li>
-                </ul>
-            </div>
-        </section>
-        <section id="about-me">
-            <h2>About Me</h2>
-            <div class="flex-container">
-                <div class="description">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, officiis minus ab ea quibusdam nihil suscipit eaque voluptas nesciunt officia accusamus fugiat exercitationem quis consequuntur placeat quo aliquid vitae facilis?Nesciunt exercitationem ullam fugiat sint aut quas cupiditate culpa laudantium iure dolorum nostrum voluptas, esse consequatur explicabo facilis ea mollitia obcaecati tenetur quod quos deserunt iusto ipsam repellendus. Eaque, tenetur!
+        <main class="parallax">
+            <section id="banner">
+                <nav class="global-nav">
+                    <div></div>
+                    <ul>
+                        <li><a href="#about-me">About Me</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div></div>
+                </nav>
+                <div class="content">
+                    <div>
+                        <img class="profile-picture" src="#" alt="profile-picture" width="60px" height="60px">
+                        <h1>Jonathan</h1>
+                        <p>Site under construction. Come back soon!</p>
+                        <ul class="media-links">
+                            <li><a href="#" class="fab fa-github"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="skills-lists">
-                    <ul class="software">
-                        <li><i class="fas fa-laptop-code"></i>&nbsp;<h3>Languages</h3></li>
-                        <li class="skills">JavaScript</li>
-                        <li class="skills">HTML5/CSS3</li>
-                        <li class="skills">Python</li>
-                        <li class="skills">Java</li>
-                        <li class="skills">C</li>
-                        <li class="skills">SQLite</li>
-                    </ul>
-                    <ul class="applications">
-                        <li><i class="fas fa-desktop"></i>&nbsp;<h3>Software</h3></li>
-                        <li class="skills">VSCode</li>
-                        <li class="skills">Ubuntu Linux</li>
-                        <li class="skills">IntelliJ IDE</li>
-                        <li class="skills">PyCharm IDE</li>
-                        <li class="skills">MS Office Suite</li>
-                    </ul>
-                    <ul class="frameworks">
-                        <li><i class="fas fa-box"></i>&nbsp;<h3>Frameworks</h3></li>
-                        <li class="skills">React.js</li>
-                        <li class="skills">Flask</li>
-                        <li class="skills">SASS</li>
-                        <li class="skills"></li>
-                        <li class="skills"></li>
-                    </ul>
-                    <ul class="professional">
-                        <li><i class="fas fa-user-tie"></i>&nbsp;<h3>Professional</h3></li>
-                        <li class="skills"></li>
-                        <li class="skills"></li>
-                        <li class="skills"></li>
-                        <li class="skills"></li>
-                        <li class="skills"></li>
-                    </ul>
-                </div>
-                <div class="education">
-                    <h3><i class="fas fa-graduation-cap"></i>&nbsp;Education</h3>
-                    <div class="education-entry">
-                        <div>
-
+                <div class="background"></div>
+            </section>
+            <section id="about-me">
+                <div class="content">
+                    <h2>About Me</h2>
+                    <div class="flex-container">
+                        <div class="description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, officiis minus ab ea quibusdam nihil suscipit eaque voluptas nesciunt officia accusamus fugiat exercitationem quis consequuntur placeat quo aliquid vitae facilis?Nesciunt exercitationem ullam fugiat sint aut quas cupiditate culpa laudantium iure dolorum nostrum voluptas, esse consequatur explicabo facilis ea mollitia obcaecati tenetur quod quos deserunt iusto ipsam repellendus. Eaque, tenetur!
                         </div>
-                        <div>
-
+                        <div class="skills-lists">
+                            <ul class="software">
+                                <li><i class="fas fa-laptop-code"></i>&nbsp;<h3>Languages</h3></li>
+                                <li class="skills">JavaScript</li>
+                                <li class="skills">HTML5/CSS3</li>
+                                <li class="skills">Python</li>
+                                <li class="skills">Java</li>
+                                <li class="skills">C</li>
+                                <li class="skills">SQLite</li>
+                            </ul>
+                            <ul class="applications">
+                                <li><i class="fas fa-desktop"></i>&nbsp;<h3>Software</h3></li>
+                                <li class="skills">VSCode</li>
+                                <li class="skills">Ubuntu Linux</li>
+                                <li class="skills">IntelliJ IDE</li>
+                                <li class="skills">PyCharm IDE</li>
+                                <li class="skills">MS Office Suite</li>
+                            </ul>
+                            <ul class="frameworks">
+                                <li><i class="fas fa-box"></i>&nbsp;<h3>Frameworks</h3></li>
+                                <li class="skills">React.js</li>
+                                <li class="skills">Flask</li>
+                                <li class="skills">SASS</li>
+                                <li class="skills"></li>
+                                <li class="skills"></li>
+                            </ul>
+                            <ul class="professional">
+                                <li><i class="fas fa-user-tie"></i>&nbsp;<h3>Professional</h3></li>
+                                <li class="skills"></li>
+                                <li class="skills"></li>
+                                <li class="skills"></li>
+                                <li class="skills"></li>
+                                <li class="skills"></li>
+                            </ul>
+                        </div>
+                        <div class="education">
+                            <h3><i class="fas fa-graduation-cap"></i>&nbsp;Education</h3>
+                            <div class="education-entry">
+                                <div>
+        
+                                </div>
+                                <div>
+        
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="projects">
-            <h2>Personal Projects</h2>
-            <div class="flex-container">
-                <!-- <div class="project" src-lazy="https://picsum.photos/300/?random">
-                    <div class="proj-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
-                    </div>
-                </div> -->
-                <a class="project" href="https://toplobster.github.io/old-apple/">
-                    <div class="proj-img" src-lazy="img/old-apple.png"></div>
-                    <div class="proj-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.
-                    </div>
-                </a>
-                <div class="project">
-                    <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
-                    <div class="proj-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
+            </section>
+            <section id="projects">
+                <div class="content">
+                    <h2>Personal Projects</h2>
+                    <div class="flex-container">
+                        <!-- <div class="project" src-lazy="https://picsum.photos/300/?random">
+                            <div class="proj-desc">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
+                            </div>
+                        </div> -->
+                        <a class="project" href="https://toplobster.github.io/old-apple/">
+                            <div class="proj-img" src-lazy="img/old-apple.png"></div>
+                            <div class="proj-desc">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.
+                            </div>
+                        </a>
+                        <a class="project">
+                            <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
+                            <div class="proj-desc">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
+                            </div>
+                        </a>
+                        <div class="project">
+                            <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
+                            <div class="proj-desc">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
+                            <div class="proj-desc">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
+                            <div class="proj-desc">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="project">
-                    <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
-                    <div class="proj-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
-                    </div>
+            </section>
+            <section id="contact">
+                <div class="content">
+                    <!-- Yes, this uses google scripts to handle emails rather than needing a backend server to handle it. Perfect for Github Pages! Solution from https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/-->
+                    <form class="gform" action="https://script.google.com/a/tech901.org/macros/s/AKfycbwSDpN3WC3GSe3SW_V8IymGZvGmSZh1uHTx9sGaug/exec" method="POST">
+                        <h1>Contact Me!</h1>
+                        <input type="text" name="name" placeholder="Name" class="form-text-field" value="" autocomplete="name">
+                        <input type="email" name="email" placeholder="Email" 
+                        class="form-text-field"value="" autocomplete="email">
+                        <input class="msg-title" type="text" name="title" placeholder="Title" value="">
+                        <textarea class="form-text-field" name="message" placeholder="Your message..." class="form-text-field" value=""></textarea>
+                        <input type="submit" value="Send" class="button-main-2">
+                        <input type="reset" value="Reset" class="button-alt-2">
+                        <h1 class="thankyou_message">
+                            <em>Thank you</em> for contacting me!<br>I'll get back to you when I can.
+                        </h1>
+                    </form>
                 </div>
-                <div class="project">
-                    <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
-                    <div class="proj-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="proj-img" src-lazy="https://picsum.photos/300/?random"></div>
-                    <div class="proj-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <div class="background"></div>
-            <!-- Yes, this uses google scripts to handle emails rather than needing a backend server to handle it. Perfect for Github Pages! Solution from https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/-->
-            <form class="gform" action="https://script.google.com/a/tech901.org/macros/s/AKfycbwSDpN3WC3GSe3SW_V8IymGZvGmSZh1uHTx9sGaug/exec" method="POST">
-                <h1>Contact Me!</h1>
-                <input type="text" name="name" placeholder="Name" class="form-text-field" value="" autocomplete="name">
-                <input type="email" name="email" placeholder="Email" 
-                class="form-text-field"value="" autocomplete="email">
-                <input class="msg-title" type="text" name="title" placeholder="Title" value="">
-                <textarea class="form-text-field" name="message" placeholder="Your message..." class="form-text-field" value=""></textarea>
-                <input type="submit" value="Send" class="button-main-2">
-                <input type="reset" value="Reset" class="button-alt-2">
-                <h1 class="thankyou_message">
-                    <em>Thank you</em> for contacting me!<br>I'll get back to you when I can.
-                </h1>
-            </form>
-            <footer id="footer">
-                <div>
+                <div class="background"></div>
+            </section>
+            <section id="footer">
+                <div class="content">
                     <p>Media Links</p>
                     <ul class="media-links">
                         <li><a href="#" class="fab fa-github"></a></li>
@@ -158,7 +170,7 @@
                     </ul>
                     <p>Background image courtesy<br>of <a href="https://unsplash.com/@matteocatanese">Unsplash Users</a></p>
                 </div>
-            </footer>
-        </section>
+            </section>
+        </main>
     </body>
 </html>
