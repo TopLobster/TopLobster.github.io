@@ -1,5 +1,9 @@
 "use strict";
 
+function fadeInBanner() {
+    document.querySelector('#banner').classList.add('fade-in');
+}
+
 /* Add and remove the Nav on scroll */
 function addtdv() {
     document.querySelectorAll("section").forEach(section => section.classList.add('tdv'));
@@ -10,11 +14,11 @@ function remtdv() {
 }
 
 function addNav() {
-    document.querySelector(".global-nav.fixed").style.transform = "translate(0,0rem)";
+    document.querySelector(".global-nav.fixed").style.transform = "translate(0,3.5rem)";
 }
 
 function remNav() {
-    document.querySelector(".global-nav.fixed").style.transform = "translate(0,-3.5rem)";
+    document.querySelector(".global-nav.fixed").style.transform = "translate(0,0rem)";
 }
 
 const bannerIO = new IntersectionObserver((entries, observer) => {
@@ -32,7 +36,7 @@ const bannerIO = new IntersectionObserver((entries, observer) => {
 
 bannerIO.observe(document.querySelector('#banner'));
 
-const lazyLoader = target => {
+const lazyProjectLoader = target => {
     const io = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             // .. do something
@@ -48,7 +52,7 @@ const lazyLoader = target => {
     io.observe(target);
 };
 
-document.querySelectorAll('.project').forEach(project => lazyLoader(project));
+document.querySelectorAll('.project').forEach(project => lazyProjectLoader(project));
 
 /* Keep opacity on filled form element if losing focus */
 document.querySelectorAll('.gform>.form-text-field').forEach((field) => {
@@ -67,7 +71,6 @@ document.querySelector('.gform>input[type=reset]').addEventListener('click', () 
 });
 
 window.onload = () => {
-    document.querySelector('#banner>div>img');
-    document.querySelector('#banner>div>h1');
-    document.querySelector('#banner>div');
+    document.querySelector("#contact>.background").style.backgroundImage = "url(../img/matteo-catanese-424968-unsplash-bottom-blur.jpg)";
+    fadeInBanner();
 };

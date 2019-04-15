@@ -7,6 +7,7 @@ $color-about-sub: #5B7B8A;
 $color1: #0a6487; //blue
 $color2: #13a3c8; //light blue
 $color3: #374c4F; //slate blue
+$color3-alt: #374c4F88;
 $color4: #b8beba; //light slate blue
 $color5: #cf8b59; //orange
 $color6: #f4c3a3; //light orange
@@ -18,15 +19,11 @@ $shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
 
 $brown: #371b0d;
 
-*, *:before, *:after {
+*, *::before, *::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: inherit;
-}
-
-::-webkit-scrollbar {
-    display: none;
 }
 
 @mixin main-button($color) {
@@ -142,11 +139,23 @@ a:hover, a:active, a:focus {
     color: $color1;
 }
 
-h2 {
+h1 {
     font-size: 3rem;
     text-align: center;
-    padding-top: 2rem;
     margin: 0 auto 1rem;
+    color: whitesmoke;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+    margin: 2rem auto 1rem;
+    padding: 0 0.5rem;
+    width: fit-content;
+    height: 2.7rem;
+    border-bottom: (2rem/16) solid lighten($color7, 10%);
 }
 
 h3 {
@@ -187,7 +196,7 @@ h3 {
 
 .global-nav {
     position: fixed;
-    top: 0px;
+    top: 0;
     z-index: 1000;
     width: 100%;
     ul {
@@ -199,9 +208,11 @@ h3 {
         margin: 0 auto;
         width: fit-content;
         background: rgba(0,0,0,.5);
-        border-radius: 0 0 10px 10px;
+        border-radius: 0 0 (5rem/16) (5rem/16);
         box-shadow: 0 0 3px rgba(0,0,0,.5);
         li {
+            width: 6.2rem;
+            text-align: center;
             display: inline-block;
             height: 100%;
             padding: 0 .7rem;
@@ -221,7 +232,7 @@ h3 {
 }
 
 .global-nav.fixed {
-    transform: translate(0,-3.5rem);
+    top: -3.5rem;
     transition: transform 500ms ease-in-out;
 }
 
@@ -299,12 +310,26 @@ section.tdv {
 
 
 #banner .background {background-image: url('../img/matteo-catanese-424968-unsplash-top-blur.jpg')}
+#banner.fade-in {background-color: transparent}
 #banner {
+    background-color: $color2;
+    transition: background-color 2.5s ease-in-out;
     min-height: 25rem;
+    .global-nav::before, .global-nav::after {
+        content: "";
+        height: 0.33rem;
+        border: (1rem/16) solid whitesmoke;
+        border-left: 0; border-right: 0;
+        flex: 0 1 100%;
+        margin-top: 0.4rem;
+    }
     .global-nav {
+        padding-top: 0.5rem;
         position: absolute;
         display: flex;
+        flex-flow: row nowrap;
         ul {
+            padding: 0;
             background: none;
             box-shadow: none;
         }
@@ -319,16 +344,26 @@ section.tdv {
         transform: translateZ(150px) scale(.5);
         div {
             text-align: center;
-            text-shadow: 0 0 5px #000;
-            color: white;
+            text-shadow: 0 0 (5rem/16) #000;
+            color: whitesmoke;
             img {
-                border: 1px solid white;
+                border: (3rem/16) solid whitesmoke;
+                height: 5rem;
+                width: 5rem;
+                display: block;
+                margin: 0 auto 1rem;
                 border-radius: 50%;
                 height: 3rem;
                 width: 3rem;
             }
             h1 {
-                font-size: 3.5rem;
+                font-size: 4rem;
+            }
+            p {
+                font-size: 1.2rem;
+                font-weight: 600;
+                max-width: 40rem;
+                margin: 0 auto 1rem;
             }
             ul li {
                 border: none;
@@ -366,7 +401,7 @@ section.tdv {
             max-width: 73rem;
             ul {
                 margin: 0.5rem 0;
-                flex: 1 0 15rem;
+                flex: 1 0 10rem;
                 li:first-child {
                     font-family: inherit;
                     font-weight: 600;
@@ -469,7 +504,6 @@ section.tdv {
     }
 }
 
-#contact .background {background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");}
 #contact {
     height: 100vh;
     min-height: (20rem);
@@ -483,7 +517,7 @@ section.tdv {
             max-height: 34rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 4rem 2rem 1fr 2rem;
+            grid-template-rows: 3rem 2rem 1fr 2rem;
             grid-gap: .5rem;
             padding: 1rem;
             margin: auto;
@@ -497,25 +531,22 @@ section.tdv {
                 box-shadow: none;
                 text-align: center;
                 text-shadow: 0 0 5px #000;
-                .form-title {
+                .form-title, .thankyou_message {
+                    position: absolute;
                     position: absolute;
                     top:0;bottom:0;left:0;right:0;
+                    line-height: 1;
+                    font-weight: 600;
                     color: white;
-                    font-size: 4rem;
                     text-shadow: 0 0 .05rem #000;
-                    text-align: center;
-                    margin: 0;
                     transition: opacity 500ms ease-in-out;
                 }
+                .form-title {
+                    margin: 0;
+                }
                 .thankyou_message {
-                    color: white;
-                    position: absolute;
-                    top:0;bottom:0;left:0;right:0;
-                    font-size: 2rem;
-                    font-weight: 600;
-                    line-height: 1;
+                    font-size: 1.5rem;
                     opacity: 0;
-                    transition: opacity 500ms ease-in-out;
                 }
             }
             .msg-title {
