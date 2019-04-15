@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 
+$color-about: #2C424C;
+$color-about-sub: #5B7B8A;
+
+
 $color1: #0a6487; //blue
 $color2: #13a3c8; //light blue
 $color3: #374c4F; //slate blue
@@ -7,6 +11,10 @@ $color4: #b8beba; //light slate blue
 $color5: #cf8b59; //orange
 $color6: #f4c3a3; //light orange
 $color7: #231e1b; //dark brown
+$color8: #000;
+$color9: #000;
+
+$shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
 
 $brown: #371b0d;
 
@@ -94,11 +102,11 @@ $brown: #371b0d;
 
 @mixin hover-grow {
     transition: transform 300ms ease-in-out;
-    transform: translateZ(0);
+    transform: scale(1);
 }
 
 @mixin hover-grow-hover {
-    transform: translateZ(2000px);
+    transform: scale(1.05);
 }
 
 *:focus {
@@ -132,6 +140,21 @@ a, a:visited {
 
 a:hover, a:active, a:focus {
     color: $color1;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 2rem;
+    margin: 0 auto 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    i {
+        font-size: 1.5rem;
+    }
 }
 
 .button-main-1 {
@@ -236,8 +259,8 @@ ul.media-links {
     section {
         transform-style: preserve-3d;
         position: relative;
+        transition: transform 1s ease-in-out;
         div.content {
-            min-height: fit-content;
             transform: translateZ(0);
         }
         div.background {
@@ -287,7 +310,9 @@ section.tdv {
         }
     }
     .content {
-        height: 100%;
+        position: absolute;
+        top:0;bottom:0;left:0;right:0;
+        margin: 100px;
         display: grid;
         align-content: center;
         justify-content: center;
@@ -321,11 +346,24 @@ section.tdv {
 #about-me {
     background: $color4;
     color: $color7;
+    display: grid;
+    align-content: center;
     .content {
+        > div {
+            margin: 0 auto 1rem;
+        }
+        .description {
+            background: whitesmoke;
+            max-width: 50rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: $shadow;
+        }
         .skills-lists {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
+            max-width: 73rem;
             ul {
                 margin: 0.5rem 0;
                 flex: 1 0 15rem;
@@ -337,9 +375,6 @@ section.tdv {
                     justify-content: center;
                     list-style-type: none;
                     padding-bottom: .25rem;
-                    i {
-                        font-size: 1.5rem;
-                    }
                 }
                 li {
                     font-family: monospace;
@@ -349,12 +384,39 @@ section.tdv {
                 }
             }
         }
+        .education {
+            display: flex;
+            flex-flow: column nowrap;
+            max-width: 70rem;
+            .education-entry {
+                margin-bottom: 1rem;
+                display: flex;
+                flex-flow: row nowrap;
+                height: 10rem;
+                :first-child {
+                    padding: 1rem;
+                    height: 100%;
+                    order: 1;
+                    flex: 0 1 30rem;
+                }
+                :last-child {
+                    padding: 1rem;
+                    height: 100%;
+                    order: 2;
+                    flex: 1 0 1fr;
+                    background: whitesmoke;
+                    box-shadow: $shadow;
+                }
+            }
+        }
     }
 }
 
 #projects {
     background: lighten($color3, 20%);
     color: $color7;
+    display: grid;
+    align-content: center;
     .content {
         .flex-container {
             width: 100%;
@@ -414,12 +476,6 @@ section.tdv {
     .content {
         height: 100%;
         display: grid;
-        h1 {
-            color: white;
-            size: 3rem;
-            text-shadow: 0 0 .05rem #000;
-            text-align: center;
-        }
         form.gform {
             width: 100%;
             max-width: 34rem;
@@ -427,19 +483,40 @@ section.tdv {
             max-height: 34rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 2rem 2rem 1fr 2rem 4rem;
+            grid-template-rows: 4rem 2rem 1fr 2rem;
             grid-gap: .5rem;
             padding: 1rem;
             margin: auto;
             input, textarea {
                 box-shadow: 0 0 5px #000;
             }
-            h1 {
+            div {
+                position: relative;
                 grid-column: 1 / span 2;
                 margin: 0;
                 box-shadow: none;
                 text-align: center;
                 text-shadow: 0 0 5px #000;
+                .form-title {
+                    position: absolute;
+                    top:0;bottom:0;left:0;right:0;
+                    color: white;
+                    font-size: 4rem;
+                    text-shadow: 0 0 .05rem #000;
+                    text-align: center;
+                    margin: 0;
+                    transition: opacity 500ms ease-in-out;
+                }
+                .thankyou_message {
+                    color: white;
+                    position: absolute;
+                    top:0;bottom:0;left:0;right:0;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    line-height: 1;
+                    opacity: 0;
+                    transition: opacity 500ms ease-in-out;
+                }
             }
             .msg-title {
                 display: none;
@@ -460,10 +537,6 @@ section.tdv {
             }
             input[type=submit]:focus, input[type=reset]:focus {
                 border-color: orange;
-            }
-            .thankyou_message {
-                opacity: 0;
-                transition: opacity 500ms ease-in-out;
             }
         }
     }

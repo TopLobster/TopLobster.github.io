@@ -97,11 +97,14 @@
             form.reset();
             document.querySelectorAll('.gform>.form-text-field').forEach((field) => field.classList.remove('filled'));
             var thankYouMessage = document.querySelector(".thankyou_message");
+            var formTitle = document.querySelector('.form-title');
             document.querySelector('.gform>input[type=submit]').blur();
-            if (thankYouMessage) {
+            if (thankYouMessage && formTitle) {
+              formTitle.style.opacity = 0;
               thankYouMessage.style.opacity = 1;
               setTimeout(() => {
                 thankYouMessage.style.opacity = 0;
+                formTitle.style.opacity = 1;
               }, 5000);
             }
             return;
