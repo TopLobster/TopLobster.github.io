@@ -437,7 +437,7 @@ section.tdv {
 }
 
 #about-me .content > div {
-  margin: 0 auto 1rem;
+  margin: 0 auto 4rem;
 }
 
 #about-me .content .description {
@@ -577,6 +577,7 @@ section.tdv {
 }
 
 #projects .content .flex-container {
+  padding-top: 3rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -591,6 +592,10 @@ section.tdv {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#projects .content .flex-container .project-observer {
+  padding-bottom: 6rem;
 }
 
 #projects .content .flex-container .project-observer > * {
@@ -622,7 +627,6 @@ section.tdv {
 }
 
 #projects .content .flex-container .project-observer .hover-observer .project {
-  margin: 1rem 0;
   min-height: 35rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 30rem;

@@ -400,7 +400,7 @@ section.tdv {
     align-content: center;
     .content {
         > div {
-            margin: 0 auto 1rem;
+            margin: 0 auto 4rem;
         }
         .description {
             background: whitesmoke;
@@ -484,17 +484,18 @@ section.tdv {
     align-content: center;
     .content {
         .flex-container {
+            padding-top: 3rem;
             width: 100%;
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;
             align-items: center;
             .project-observer {
+                padding-bottom: 6rem;
                 @include fade-in-observe-left;
                 .hover-observer {
                     @include hover-grow;
                     .project {
-                        margin: 1rem 0;
                         min-height: 35rem;
                         flex: 1 1 30rem;
                         width: 100%;
