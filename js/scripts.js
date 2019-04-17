@@ -36,14 +36,11 @@ const bannerIO = new IntersectionObserver((entries, observer) => {
 
 bannerIO.observe(document.querySelector('#banner'));
 
-const lazyProjectLoader = target => {
+const observeProject = target => {
     const io = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             // .. do something
             if (entry.isIntersecting) {
-                let img = entry.target.firstElementChild;
-                let src = img.getAttribute('src-lazy');
-                img.style.backgroundImage = `url("` + src + `")`;
                 entry.target.classList.add("proj-move");
                 observer.disconnect();
             }
@@ -52,7 +49,7 @@ const lazyProjectLoader = target => {
     io.observe(target);
 };
 
-document.querySelectorAll('.project').forEach(project => lazyProjectLoader(project));
+document.querySelectorAll('.project-observer').forEach(project => observeProject(project));
 
 /* Keep opacity on filled form element if losing focus */
 document.querySelectorAll('.gform>.form-text-field').forEach((field) => {
@@ -73,4 +70,7 @@ document.querySelector('.gform>input[type=reset]').addEventListener('click', () 
 window.onload = () => {
     document.querySelector("#contact>.background").style.backgroundImage = "url(../img/matteo-catanese-424968-unsplash-bottom-blur.jpg)";
     fadeInBanner();
+    document.querySelectorAll('.proj-img').forEach((img) => {
+        img.style.backgroundImage = 'url("' + img.getAttribute('src-lazy') + '")';
+    });
 };

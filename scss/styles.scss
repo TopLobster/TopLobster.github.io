@@ -15,7 +15,8 @@ $color7: #231e1b; //dark brown
 $color8: #000;
 $color9: #000;
 
-$shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #001;
+$shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
+$shadow-big: 0 (8rem/16) (20rem/16) (-4rem/16) #000;
 
 $brown: #371b0d;
 
@@ -83,7 +84,7 @@ $brown: #371b0d;
 }
 
 @mixin fade-in-observe-left {
-    * {
+    > * {
         transition: opacity 1s ease-out, transform 1s ease-out;
         transform: translate(-100vw,0);
         opacity: 0;
@@ -91,19 +92,22 @@ $brown: #371b0d;
 }
 
 @mixin fade-in-observe-move {
-    * {
+    > * {
         transform: translate(0,0);
         opacity: 1;
     }
 }
 
 @mixin hover-grow {
-    transition: transform 300ms ease-in-out;
-    transform: scale(1);
-}
-
-@mixin hover-grow-hover {
-    transform: scale(1.05);
+    > * {
+        transition: transform 300ms ease-in-out;
+        transform: scale(1);
+        box-shadow: $shadow;
+    }
+    > *:hover {
+        transform: scale(1.02);
+        box-shadow: $shadow-big;
+    }
 }
 
 *:focus {
@@ -145,7 +149,7 @@ h1 {
     margin: 0 auto 1rem;
     color: whitesmoke;
     line-height: 1;
-    @media (max-width: 400px) {
+    @media (max-width: 32rem) {
         font-size: 2rem;
     }
 }
@@ -159,7 +163,7 @@ h2 {
     width: fit-content;
     height: 2.7rem;
     border-bottom: (2rem/16) solid lighten($color7, 10%);
-    @media (max-width: 400px) {
+    @media (max-width: 32rem) {
         font-size: 2rem;
         height: 1.8rem;
     }
@@ -174,17 +178,17 @@ h3 {
 }
 
 .button-main-1 {
-    @include main-button($color1);
+    @include main-button($color2);
 }
 .button-main-1:hover {
-    @include darken-main-hvr($color1);
+    @include darken-main-hvr($color2);
 }
 
 .button-alt-1 {
-    @include alt-button($color1);
+    @include alt-button($color2);
 }
 .button-alt-1:hover {
-    @include darken-alt-hvr($color1);
+    @include darken-alt-hvr($color2);
 }
 
 .button-main-2 {
@@ -273,6 +277,8 @@ ul.media-links {
     }
 }
 
+body {transform-style: preserve-3d}
+
 .parallax {
     perspective: 300px;
     height: 100vh;
@@ -288,6 +294,7 @@ ul.media-links {
             transform-origin: 100%;
         }
         div.background {
+            z-index: -100;
             transform-origin: 100%;
             position: absolute;
             top: 0;
@@ -304,7 +311,7 @@ ul.media-links {
 }
 
 section.tdv {
-    transform: translate3d(700px, -100px, -800px) rotateY(30deg);
+    transform: translate3d(-1000px, 0, -800px) rotateY(-30deg);
 }
 
 
@@ -320,20 +327,22 @@ section.tdv {
 
 .content {
     padding: 1rem;
+    z-index: 2;
 }
 
 
 #banner .background {background-image: url('../img/matteo-catanese-424968-unsplash-top-blur.jpg')}
 #banner.fade-in {background-color: transparent}
 #banner {
-    background-color: $color2;
-    transition: background-color 2.5s ease-in-out;
+    background-color: $color1;
+    transition: transform 1s ease-in-out, background-color 2.5s ease-in-out;
     min-height: 25rem;
+    .background {transform: translateZ(-450px) scale(2.53);}
     .global-nav::before, .global-nav::after {
         content: "";
         height: 0.33em;
-        border: (1em/16) solid whitesmoke;
-        border-left: 0; border-right: 0;
+        border-top: (1em/16) solid whitesmoke;
+        border-bottom: (1em/16) solid whitesmoke;
         flex: 0 1 100%;
         margin-top: 0.4em;
     }
@@ -438,6 +447,7 @@ section.tdv {
                 }
                 :first-child {
                     padding: 1rem;
+                    font-weight: 600;
                     height: 100%;
                     order: 1;
                     flex: 0 1 30rem;
@@ -468,7 +478,7 @@ section.tdv {
 }
 
 #projects {
-    background: lighten($color3, 20%);
+    background: lighten($color3, 30%);
     color: $color7;
     display: grid;
     align-content: center;
@@ -476,49 +486,80 @@ section.tdv {
         .flex-container {
             width: 100%;
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: column nowrap;
             justify-content: center;
-            align-items: flex-start;
-            .project {
-                display: block;
-                margin: 2rem;
-                flex: 1 1 30rem;
-                max-width: 40rem;
-                height: 25rem;
-                opacity: 1;
-                border-radius: .5rem;
-                position: relative;
+            align-items: center;
+            .project-observer {
                 @include fade-in-observe-left;
-                @include hover-grow;
-                .proj-img {
-                    height: 100%;
-                    width: 100%;
-                    border-radius: .5rem;
-                    background-size: cover;
-                    background-position: center;
-                    box-shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
-                }
-                .proj-img-small {
-                    border-radius: .5rem .5rem 0 0;
-                }
-                .proj-desc {
-                    background: white;
-                    padding: .5rem;
-                    position: absolute;
-                    bottom: 10px;
-                    left: -1rem;
-                    right: 10%;
-                }
-                .proj-desc-small {
-                    border-radius: 0 0 .5rem .5rem;
+                .hover-observer {
+                    @include hover-grow;
+                    .project {
+                        margin: 1rem 0;
+                        min-height: 35rem;
+                        flex: 1 1 30rem;
+                        width: 100%;
+                        max-width: 73rem;
+                        position: relative;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-content: center;
+                        .proj-img {
+                            background-size: cover;
+                            background-position: center;
+                            flex: 1 0 65%;
+                            order: 1;
+                            min-height: 30rem;
+                        }
+                        .proj-desc {
+                            vertical-align: center;
+                            flex: 0 0 35%;
+                            background: whitesmoke;
+                            padding: 1rem;
+                            order: 2;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            align-content: center;
+                            justify-content: center;
+                            text-align: center;
+                            p {
+                                margin-bottom: 1rem;
+                            }
+                            button {
+                                width: 100%;
+                                height: 2rem;
+                            }
+                        }
+                        @media (max-width: 45rem) {
+                            flex-flow: column nowrap;
+                            justify-content: center;
+                            .proj-img {
+                                flex: 1 0 65%;
+                            }
+                            .proj-desc {
+                                flex: 0 0 35%;
+                            }
+                        }
+                    }
                 }
             }
-    
-            .proj-move {
+            .project-observer.proj-move {
                 @include fade-in-observe-move;
             }
-            .project:hover {
-                @include hover-grow-hover;
+            .project-observer:nth-child(2n) {
+                .proj-img {
+                    order: 2 !important;
+                }
+                .proj-desc {
+                    order: 1 !important;
+                }
+                @media (max-width: 45rem) {
+                    .proj-img {
+                        order: 1 !important;
+                    }
+                    .proj-desc {
+                        order: 2 !important;
+                    }
+                }
             }
         }
     }
@@ -542,7 +583,7 @@ section.tdv {
             padding: 1rem;
             margin: auto;
             input, textarea {
-                box-shadow: 0 0 5px #000;
+                box-shadow: $shadow;
             }
             div {
                 position: relative;
@@ -557,7 +598,7 @@ section.tdv {
                     top:0;bottom:0;left:0;right:0;
                     line-height: 1;
                     font-weight: 600;
-                    color: white;
+                    color: whitesmoke;
                     text-shadow: 0 0 .05rem #000;
                     transition: opacity 500ms ease-in-out;
                 }
@@ -600,7 +641,7 @@ section.tdv {
     background: $color7;
     color: $color4;
     font-size: 1.5rem;
-    height: 30vh;
+    height: 25.5vh;
     min-height: 10rem;
     .content {
         height: 100%;
