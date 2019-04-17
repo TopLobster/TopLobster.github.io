@@ -55,6 +55,12 @@ h1 {
   line-height: 1;
 }
 
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 h2 {
   font-size: 3rem;
   line-height: 1;
@@ -66,6 +72,13 @@ h2 {
   width: fit-content;
   height: 2.7rem;
   border-bottom: 0.125rem solid #403731;
+}
+
+@media (max-width: 400px) {
+  h2 {
+    font-size: 2rem;
+    height: 1.8rem;
+  }
 }
 
 h3 {
@@ -152,6 +165,7 @@ h3 i {
   top: 0;
   z-index: 1000;
   width: 100%;
+  font-size: 1rem;
 }
 
 .global-nav ul {
@@ -165,23 +179,23 @@ h3 i {
       -ms-flex-pack: center;
           justify-content: center;
   text-decoration: none;
-  padding: .4rem .5rem .6rem;
+  padding: .4em .5em .6em;
   margin: 0 auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   background: rgba(0, 0, 0, 0.5);
-  border-radius: 0 0 0.3125rem 0.3125rem;
+  border-radius: 0 0 0.3125em 0.3125em;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .global-nav ul li {
-  width: 6.2rem;
+  width: 6.2em;
   text-align: center;
   display: inline-block;
   height: 100%;
-  padding: 0 .7rem;
+  padding: 0 .7em;
   border-left: 1px solid white;
 }
 
@@ -204,6 +218,12 @@ h3 i {
   transition: -webkit-transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+@media (max-width: 27rem) {
+  .global-nav.fixed {
+    font-size: .8rem;
+  }
 }
 
 ul.media-links {
@@ -248,6 +268,8 @@ ul.media-links li:last-child {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-perspective-origin: 100%;
+          perspective-origin: 100%;
 }
 
 .parallax section {
@@ -263,9 +285,13 @@ ul.media-links li:last-child {
 .parallax section div.content {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
 }
 
 .parallax section div.background {
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
   position: absolute;
   top: 0;
   right: 0;
@@ -315,18 +341,18 @@ section.tdv {
 
 #banner .global-nav::before, #banner .global-nav::after {
   content: "";
-  height: 0.33rem;
-  border: 0.0625rem solid whitesmoke;
+  height: 0.33em;
+  border: 0.0625em solid whitesmoke;
   border-left: 0;
   border-right: 0;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
-  margin-top: 0.4rem;
+  margin-top: 0.4em;
 }
 
 #banner .global-nav {
-  padding-top: 0.5rem;
+  padding-top: 0.5em;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,20 +372,10 @@ section.tdv {
 
 #banner .content {
   position: absolute;
-  top: 0;
+  top: 30%;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 100px;
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transform: translateZ(150px) scale(0.5);
-          transform: translateZ(150px) scale(0.5);
 }
 
 #banner .content div {
@@ -377,10 +393,6 @@ section.tdv {
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
-}
-
-#banner .content div h1 {
-  font-size: 4rem;
 }
 
 #banner .content div p {
@@ -420,8 +432,8 @@ section.tdv {
   max-width: 50rem;
   padding: 1rem;
   text-align: center;
-  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
-          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #001;
+          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #001;
 }
 
 #about-me .content .skills-lists {
@@ -488,7 +500,10 @@ section.tdv {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  height: 10rem;
+}
+
+#about-me .content .education .education-entry > * {
+  min-height: 10rem;
 }
 
 #about-me .content .education .education-entry :first-child {
@@ -512,8 +527,30 @@ section.tdv {
       -ms-flex: 1 0 1fr;
           flex: 1 0 1fr;
   background: whitesmoke;
-  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
-          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #001;
+          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #001;
+}
+
+@media (max-width: 37rem) {
+  #about-me .content .education .education-entry {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  #about-me .content .education .education-entry > * {
+    min-height: 0;
+  }
+  #about-me .content .education .education-entry :first-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0;
+            flex: 0 0;
+  }
+  #about-me .content .education .education-entry :last-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0;
+            flex: 0 0;
+  }
 }
 
 #projects {
@@ -675,6 +712,12 @@ section.tdv {
 #contact .content form.gform div .thankyou_message {
   font-size: 1.5rem;
   opacity: 0;
+}
+
+@media (max-width: 400) {
+  #contact .content form.gform div .thankyou_message {
+    font-size: 1rem;
+  }
 }
 
 #contact .content form.gform .msg-title {

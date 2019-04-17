@@ -15,7 +15,7 @@ $color7: #231e1b; //dark brown
 $color8: #000;
 $color9: #000;
 
-$shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
+$shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #001;
 
 $brown: #371b0d;
 
@@ -145,6 +145,9 @@ h1 {
     margin: 0 auto 1rem;
     color: whitesmoke;
     line-height: 1;
+    @media (max-width: 400px) {
+        font-size: 2rem;
+    }
 }
 
 h2 {
@@ -156,6 +159,10 @@ h2 {
     width: fit-content;
     height: 2.7rem;
     border-bottom: (2rem/16) solid lighten($color7, 10%);
+    @media (max-width: 400px) {
+        font-size: 2rem;
+        height: 1.8rem;
+    }
 }
 
 h3 {
@@ -199,23 +206,24 @@ h3 {
     top: 0;
     z-index: 1000;
     width: 100%;
+    font-size: 1rem;
     ul {
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        padding: .4rem .5rem .6rem;
+        padding: .4em .5em .6em;
         margin: 0 auto;
         width: fit-content;
         background: rgba(0,0,0,.5);
-        border-radius: 0 0 (5rem/16) (5rem/16);
+        border-radius: 0 0 (5em/16) (5em/16);
         box-shadow: 0 0 3px rgba(0,0,0,.5);
         li {
-            width: 6.2rem;
+            width: 6.2em;
             text-align: center;
             display: inline-block;
             height: 100%;
-            padding: 0 .7rem;
+            padding: 0 .7em;
             border-left: 1px solid white;
             a {
                 color: white;
@@ -234,6 +242,9 @@ h3 {
 .global-nav.fixed {
     top: -3.5rem;
     transition: transform 500ms ease-in-out;
+    @media (max-width: 27rem) {
+        font-size: .8rem;
+    }
 }
 
 ul.media-links {
@@ -267,14 +278,17 @@ ul.media-links {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    perspective-origin: 100%;
     section {
         transform-style: preserve-3d;
         position: relative;
         transition: transform 1s ease-in-out;
         div.content {
             transform: translateZ(0);
+            transform-origin: 100%;
         }
         div.background {
+            transform-origin: 100%;
             position: absolute;
             top: 0;
             right: 0;
@@ -317,14 +331,14 @@ section.tdv {
     min-height: 25rem;
     .global-nav::before, .global-nav::after {
         content: "";
-        height: 0.33rem;
-        border: (1rem/16) solid whitesmoke;
+        height: 0.33em;
+        border: (1em/16) solid whitesmoke;
         border-left: 0; border-right: 0;
         flex: 0 1 100%;
-        margin-top: 0.4rem;
+        margin-top: 0.4em;
     }
     .global-nav {
-        padding-top: 0.5rem;
+        padding-top: 0.5em;
         position: absolute;
         display: flex;
         flex-flow: row nowrap;
@@ -336,12 +350,7 @@ section.tdv {
     }
     .content {
         position: absolute;
-        top:0;bottom:0;left:0;right:0;
-        margin: 100px;
-        display: grid;
-        align-content: center;
-        justify-content: center;
-        transform: translateZ(150px) scale(.5);
+        top:30%;bottom:0;left:0;right:0;
         div {
             text-align: center;
             text-shadow: 0 0 (5rem/16) #000;
@@ -355,9 +364,6 @@ section.tdv {
                 border-radius: 50%;
                 height: 3rem;
                 width: 3rem;
-            }
-            h1 {
-                font-size: 4rem;
             }
             p {
                 font-size: 1.2rem;
@@ -427,7 +433,9 @@ section.tdv {
                 margin-bottom: 1rem;
                 display: flex;
                 flex-flow: row nowrap;
-                height: 10rem;
+                > * {
+                    min-height: 10rem;
+                }
                 :first-child {
                     padding: 1rem;
                     height: 100%;
@@ -441,6 +449,18 @@ section.tdv {
                     flex: 1 0 1fr;
                     background: whitesmoke;
                     box-shadow: $shadow;
+                }
+                @media (max-width: 37rem) {
+                    flex-flow: column nowrap;
+                    > * {
+                        min-height: 0;
+                    }
+                    :first-child {
+                        flex: 0 0;
+                    }
+                    :last-child {
+                        flex: 0 0;
+                    }
                 }
             }
         }
@@ -547,6 +567,9 @@ section.tdv {
                 .thankyou_message {
                     font-size: 1.5rem;
                     opacity: 0;
+                    @media (max-width: 400) {
+                        font-size: 1rem;
+                    }
                 }
             }
             .msg-title {
