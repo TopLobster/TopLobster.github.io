@@ -12,6 +12,7 @@
         <script src="js/scripts.js" defer></script>
     </head>
     <body>
+        <button class="tdv-button" onclick="remtdv()">Remove 3D</button>
         <nav class="fixed global-nav">
             <ul>
                 <li><a href="#banner">Home</a></li>
@@ -108,20 +109,21 @@
                 <div class="content">
                     <h2>Personal Projects</h2>
                     <div class="flex-container">
-                        <!-- <div class="project" src-lazy="https://picsum.photos/300/?random">
-                            <div class="proj-desc">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.     
-                            </div>
-                        </div> -->
                         <div class="project-observer">
                             <div class="hover-observer">
                                 <div class="project">
-                                    <div class="proj-img" src-lazy="img/old-apple.png"></div>
+                                    <div class="proj-img" src-lazy="img/old-apple.jpg"></div>
                                     <div class="proj-desc">
                                         <p>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.
                                         </p>
-                                        <button class='button-main-1'>Project here</button>
+                                        <form action="https://github.com/TopLobster/old-apple/" target="_blank">
+                                            <input class="button-main-1" type="submit" value="Source" />
+                                        </form>
+                                        <form action="https://toplobster.github.io/old-apple/" target="_blank">
+                                            <input class="button-main-3" type="submit" 
+                                            value="Project Here" />
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -129,17 +131,76 @@
                         <div class="project-observer">
                             <div class="hover-observer">
                                 <div class="project">
-                                    <div class="proj-img" src-lazy="https://picsum.photos/200/300?random"></div>
+                                    <div class="proj-img" src-lazy="img/profile.jpg"></div>
                                     <div class="proj-desc">
                                         <p>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.
                                         </p>
-                                        <button class='button-main-1'>Project here</button>
+                                        <form action="https://github.com/TopLobster/TopLobster.github.io/" target="_blank">
+                                            <input class="button-main-1" type="submit" value="Source" />
+                                        </form>
+                                        <button class="button-main-3" onclick="addtdv()">Enable 3D view</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="project-observer">
+                            <div class="hover-observer">
+                                <div class="project">
+                                    <div class="proj-img" src-lazy="img/calculator.jpg"></div>
+                                    <div class="proj-desc">
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.
+                                        </p>
+                                        <form action="https://github.com/TopLobster/calculator/" target="_blank">
+                                            <input class="button-main-1" type="submit" value="Source" />
+                                        </form>
+                                        <form action="https://toplobster.github.io/calculator/" target="_blank">
+                                            <input class="button-main-3" type="submit"
+                                            value="Project Here" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-observer">
+                            <div class="hover-observer">
+                                <div class="project">
+                                    <div class="proj-img" src-lazy="img/etch-a-sketch.jpg"></div>
+                                    <div class="proj-desc">
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.
+                                        </p>
+                                        <form action="https://github.com/TopLobster/etch-a-sketch" target="_blank">
+                                            <input class="button-main-1" type="submit" value="Source" />
+                                        </form>
+                                        <form action="https://toplobster.github.io/etch-a-sketch/" target="_blank">
+                                            <input class="button-main-3" type="submit"
+                                            value="Project Here" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-observer">
+                            <div class="hover-observer">
+                                <div class="project">
+                                    <div class="proj-img" src-lazy="img/old-apple.jpg"></div>
+                                    <div class="proj-desc">
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed similique vitae ut, animi accusantium accusamus commodi quidem ex eos numquam dignissimos sint, odio reiciendis rem itaque provident nesciunt suscipit iure.
+                                        </p>
+                                        <form action="https://github.com/TopLobster/old-apple" target="_blank">
+                                            <input class="button-main-1" type="submit" value="Source" />
+                                        </form>
+                                        <form action="https://toplobster.github.io/old-apple/" target="_blank">
+                                            <input class="button-main-1" type="submit" 
+                                            value="Project Here" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

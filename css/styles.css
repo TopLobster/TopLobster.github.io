@@ -91,6 +91,7 @@ h3 i {
 }
 
 .button-main-1 {
+  display: inline-block;
   border: 0.1rem solid #13a3c8;
   background-color: #13a3c8;
   border-radius: .5rem;
@@ -108,6 +109,7 @@ h3 i {
 }
 
 .button-alt-1 {
+  display: inline-block;
   border: 0.1rem solid #13a3c8;
   background-color: #13a3c8;
   border-radius: .5rem;
@@ -126,6 +128,7 @@ h3 i {
 }
 
 .button-main-2 {
+  display: inline-block;
   border: 0.1rem solid #374c4F;
   background-color: #374c4F;
   border-radius: .5rem;
@@ -142,7 +145,26 @@ h3 i {
   cursor: pointer;
 }
 
+.button-main-3 {
+  display: inline-block;
+  border: 0.1rem solid orange;
+  background-color: orange;
+  border-radius: .5rem;
+  color: #231e1b;
+  font-weight: 600;
+  color: white;
+  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+}
+
+.button-main-3:hover {
+  background-color: #cc8400;
+  border-color: #cc8400;
+  cursor: pointer;
+}
+
 .button-alt-2 {
+  display: inline-block;
   border: 0.1rem solid #374c4F;
   background-color: #374c4F;
   border-radius: .5rem;
@@ -224,6 +246,35 @@ h3 i {
   .global-nav.fixed {
     font-size: .8rem;
   }
+}
+
+.tdv-button {
+  position: fixed;
+  bottom: -3rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: auto;
+  width: 50%;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+  display: inline-block;
+  border: 0.1rem solid #13a3c8;
+  background-color: #13a3c8;
+  border-radius: .5rem;
+  color: #231e1b;
+  font-weight: 600;
+  color: white;
+  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  -webkit-transform: tranlateY(0);
+          transform: tranlateY(0);
+  -webkit-transition: -webkit-transform 500ms ease-out 1s;
+  transition: -webkit-transform 500ms ease-out 1s;
+  transition: transform 500ms ease-out 1s;
+  transition: transform 500ms ease-out 1s, -webkit-transform 500ms ease-out 1s;
 }
 
 ul.media-links {
@@ -312,8 +363,8 @@ body {
 }
 
 section.tdv {
-  -webkit-transform: translate3d(-1000px, 0, -800px) rotateY(-30deg);
-          transform: translate3d(-1000px, 0, -800px) rotateY(-30deg);
+  -webkit-transform: translate3d(-100vw, 0, -800px) rotateY(-10deg);
+          transform: translate3d(-100vw, 0, -800px) rotateY(-10deg);
 }
 
 #banner, #contact {
@@ -654,7 +705,7 @@ section.tdv {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  min-height: 30rem;
+  min-height: 20rem;
 }
 
 #projects .content .flex-container .project-observer .hover-observer .project .proj-desc {
@@ -686,9 +737,10 @@ section.tdv {
   margin-bottom: 1rem;
 }
 
-#projects .content .flex-container .project-observer .hover-observer .project .proj-desc button {
+#projects .content .flex-container .project-observer .hover-observer .project .proj-desc input, #projects .content .flex-container .project-observer .hover-observer .project .proj-desc button {
   width: 100%;
   height: 2rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 45rem) {

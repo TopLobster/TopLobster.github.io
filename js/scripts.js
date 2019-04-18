@@ -7,10 +7,12 @@ function fadeInBanner() {
 /* Add and remove the Nav on scroll */
 function addtdv() {
     document.querySelectorAll("section").forEach(section => section.classList.add('tdv'));
+    document.querySelector('.tdv-button').style.transform = 'translateY(-3rem)'
 }
 
 function remtdv() {
     document.querySelectorAll("section").forEach(section => section.classList.remove('tdv'));
+    document.querySelector('.tdv-button').style.transform = 'translateY(0)';
 }
 
 function addNav() {
@@ -68,6 +70,7 @@ document.querySelector('.gform>input[type=reset]').addEventListener('click', () 
 });
 
 window.onload = () => {
+    /* Load in images later */
     document.querySelector("#contact>.background").style.backgroundImage = "url(../img/matteo-catanese-424968-unsplash-bottom-blur.jpg)";
     fadeInBanner();
     document.querySelectorAll('.proj-img').forEach((img) => {
