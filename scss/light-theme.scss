@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+$fonts: Nunito;
+
+$color1: #0a6487; //blue
+$color2: #13a3c8; //light blue
+$color3: #374c4F; //slate blue
+$color4: #b8beba; //light slate blue
+$color5: #cf8b59; //orange
+$color6: #f4c3a3; //light orange
+$color7: #231e1b; //dark brown
+$color8: #000;
+$color9: #000;
+
+$h1-text: whitesmoke;
+$h2-text: $color7;
+$h2-underline: $color7;
+$h3-text: $color7;
+$main-text: $color7;
+$text-shadow: 0 0 5px #000;
+$banner-text: whitesmoke;
+$nav-text: white;
+$nav-bg: rgba(0,0,0,.5);
+$button-text: whitesmoke;
+$banner-bg: $color1;
+$about-me-bg: $color4;
+$projects-bg: lighten($color3, 30%);
+$about-me-tile-bg: whitesmoke;
+$projects-tile-bg: whitesmoke;
+$footer-bg: $color7;
+$footer-text: #b8beba;
+$button-1-color: $color2;
+$button-2-color: $color3;
+$button-3-color: orange;
+$button-text: whitesmoke;
+$link-text: $color2;
+$form-box-bg: $color4;
+$form-text: whitesmoke;
+
+$shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
+$shadow-big: 0 (8rem/16) (20rem/16) (-4rem/16) #000;
+
+@import "layout.scss";
+
+#banner .background {background-image: url('../img/matteo-catanese-424968-unsplash-top-blur.jpg')}
+
+#contact .background {background-image: url('../img/matteo-catanese-424968-unsplash-bottom-blur.jpg');}

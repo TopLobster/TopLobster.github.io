@@ -7,7 +7,7 @@ function fadeInBanner() {
 /* Add and remove the Nav on scroll */
 function addtdv() {
     document.querySelectorAll("section").forEach(section => section.classList.add('tdv'));
-    document.querySelector('.tdv-button').style.transform = 'translateY(-3rem)'
+    document.querySelector('.tdv-button').style.transform = 'translateY(-3rem)';
 }
 
 function remtdv() {
@@ -69,9 +69,12 @@ document.querySelector('.gform>input[type=reset]').addEventListener('click', () 
     document.querySelectorAll('.gform>.form-text-field').forEach((field) => field.classList.remove('filled'));
 });
 
+function enableDarkTheme() {
+    document.querySelector("#contact>.background").style.backgroundImage = "url(../img/matteo-catanese-424968-unsplash-bottom-blur.jpg)";
+}
+
 window.onload = () => {
     /* Load in images later */
-    document.querySelector("#contact>.background").style.backgroundImage = "url(../img/matteo-catanese-424968-unsplash-bottom-blur.jpg)";
     fadeInBanner();
     document.querySelectorAll('.proj-img').forEach((img) => {
         img.style.backgroundImage = 'url("' + img.getAttribute('src-lazy') + '")';

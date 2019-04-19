@@ -62,6 +62,7 @@ h1 {
 }
 
 h2 {
+  color: #231e1b;
   font-size: 3rem;
   line-height: 1;
   text-align: center;
@@ -109,7 +110,7 @@ iframe {
   border-radius: .5rem;
   color: #231e1b;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
@@ -127,7 +128,7 @@ iframe {
   border-radius: .5rem;
   color: #231e1b;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   background-color: transparent;
@@ -146,13 +147,32 @@ iframe {
   border-radius: .5rem;
   color: #231e1b;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .button-main-2:hover {
   background-color: #222f31;
+  border-color: #222f31;
+  cursor: pointer;
+}
+
+.button-alt-2 {
+  display: inline-block;
+  border: 0.1rem solid #374c4F;
+  background-color: #374c4F;
+  border-radius: .5rem;
+  color: #231e1b;
+  font-weight: 600;
+  color: whitesmoke;
+  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  background-color: transparent;
+}
+
+.button-alt-2:hover {
+  background-color: rgba(0, 0, 0, 0.3);
   border-color: #222f31;
   cursor: pointer;
 }
@@ -164,7 +184,7 @@ iframe {
   border-radius: .5rem;
   color: #231e1b;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
@@ -172,25 +192,6 @@ iframe {
 .button-main-3:hover {
   background-color: #cc8400;
   border-color: #cc8400;
-  cursor: pointer;
-}
-
-.button-alt-2 {
-  display: inline-block;
-  border: 0.1rem solid #374c4F;
-  background-color: #374c4F;
-  border-radius: .5rem;
-  color: #231e1b;
-  font-weight: 600;
-  color: white;
-  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
-  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
-  background-color: transparent;
-}
-
-.button-alt-2:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: #222f31;
   cursor: pointer;
 }
 
@@ -239,7 +240,7 @@ iframe {
 }
 
 .global-nav ul li a:hover, .global-nav ul li a:focus {
-  color: #b8beba;
+  color: #cccccc;
 }
 
 .global-nav ul li:last-child {
@@ -273,12 +274,12 @@ iframe {
   -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
           box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
   display: inline-block;
-  border: 0.1rem solid #13a3c8;
-  background-color: #13a3c8;
+  border: 0.1rem solid #374c4F;
+  background-color: #374c4F;
   border-radius: .5rem;
   color: #231e1b;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   -webkit-transform: tranlateY(0);
@@ -307,22 +308,22 @@ ul.media-links li {
   text-decoration: none;
   height: 1em;
   padding: 0 .5em;
-  border-left: 1px solid #b8beba;
+  border-left: 1px solid whitesmoke;
 }
 
 ul.media-links li a {
   font-size: 2em;
   display: inline-block;
   margin: -.25em 0;
-  color: #b8beba;
+  color: whitesmoke;
 }
 
 ul.media-links li a:hover {
-  color: #374c4F;
+  color: #c2c2c2;
 }
 
 ul.media-links li:last-child {
-  border-right: 1px solid #b8beba;
+  border-right: 1px solid whitesmoke;
 }
 
 body {
@@ -392,10 +393,6 @@ section.tdv {
 .content {
   padding: 1rem;
   z-index: 2;
-}
-
-#contact.background {
-  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
 }
 
 #banner.fade-in {
@@ -483,11 +480,11 @@ section.tdv {
 }
 
 #banner .content div ul li a {
-  color: white;
+  color: whitesmoke;
 }
 
 #banner .content div ul li a:hover, #banner .content div ul li a:focus, #banner .content div ul li a:active {
-  color: #b8beba;
+  color: #c2c2c2;
 }
 
 #about-me {
@@ -862,7 +859,7 @@ section.tdv {
   line-height: 1;
   font-weight: 600;
   color: whitesmoke;
-  text-shadow: 0 0 .05rem #000;
+  text-shadow: 0 0 5px #000;
   -webkit-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
 }
@@ -889,7 +886,7 @@ section.tdv {
 #contact .content form.gform .form-text-field {
   border: none;
   background-color: #b8beba;
-  color: #231e1b;
+  color: whitesmoke;
   opacity: .5;
   border-radius: .5rem;
   padding: .5rem;
@@ -954,4 +951,12 @@ section.tdv {
   width: fit-content;
   margin: auto;
 }
-/*# sourceMappingURL=styles.css.map */
+
+#banner .background {
+  background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
+}
+
+#contact .background {
+  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
+}
+/*# sourceMappingURL=light-theme.css.map */

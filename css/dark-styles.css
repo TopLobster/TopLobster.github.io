@@ -954,4 +954,12 @@ section.tdv {
   width: fit-content;
   margin: auto;
 }
-/*# sourceMappingURL=styles.css.map */
+
+#banner .background {
+  background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
+}
+
+#contact.background {
+  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
+}
+/*# sourceMappingURL=dark-styles.css.map */

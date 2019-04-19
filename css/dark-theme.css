@@ -17,7 +17,7 @@ html {
   overflow: hidden;
   font-size: 1rem;
   font-family: Nunito;
-  color: #231e1b;
+  color: whitesmoke;
 }
 
 @media (min-width: 1500px) {
@@ -37,14 +37,14 @@ main {
 }
 
 a, a:visited {
-  color: #13a3c8;
+  color: #5B7B8A;
   text-decoration: none;
   -webkit-transition: 150ms color linear;
   transition: 150ms color linear;
 }
 
 a:hover, a:active, a:focus {
-  color: #0a6487;
+  color: #2C424C;
 }
 
 h1 {
@@ -62,6 +62,7 @@ h1 {
 }
 
 h2 {
+  color: whitesmoke;
   font-size: 3rem;
   line-height: 1;
   text-align: center;
@@ -71,7 +72,7 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
   height: 2.7rem;
-  border-bottom: 0.125rem solid #403731;
+  border-bottom: 0.125rem solid #94b6c6;
 }
 
 @media (max-width: 32rem) {
@@ -104,30 +105,30 @@ iframe {
 
 .button-main-1 {
   display: inline-block;
-  border: 0.1rem solid #13a3c8;
-  background-color: #13a3c8;
+  border: 0.1rem solid #7493B1;
+  background-color: #7493B1;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #51796F;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .button-main-1:hover {
-  background-color: #0f7d99;
-  border-color: #0f7d99;
+  background-color: #577a9b;
+  border-color: #577a9b;
   cursor: pointer;
 }
 
 .button-alt-1 {
   display: inline-block;
-  border: 0.1rem solid #13a3c8;
-  background-color: #13a3c8;
+  border: 0.1rem solid #7493B1;
+  background-color: #7493B1;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #51796F;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   background-color: transparent;
@@ -135,25 +136,44 @@ iframe {
 
 .button-alt-1:hover {
   background-color: rgba(0, 0, 0, 0.3);
-  border-color: #0f7d99;
+  border-color: #577a9b;
   cursor: pointer;
 }
 
 .button-main-2 {
   display: inline-block;
-  border: 0.1rem solid #374c4F;
-  background-color: #374c4F;
+  border: 0.1rem solid #283c37;
+  background-color: #283c37;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #51796F;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .button-main-2:hover {
-  background-color: #222f31;
-  border-color: #222f31;
+  background-color: #141d1b;
+  border-color: #141d1b;
+  cursor: pointer;
+}
+
+.button-alt-2 {
+  display: inline-block;
+  border: 0.1rem solid #283c37;
+  background-color: #283c37;
+  border-radius: .5rem;
+  color: #51796F;
+  font-weight: 600;
+  color: whitesmoke;
+  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  background-color: transparent;
+}
+
+.button-alt-2:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #141d1b;
   cursor: pointer;
 }
 
@@ -162,9 +182,9 @@ iframe {
   border: 0.1rem solid orange;
   background-color: orange;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #51796F;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
@@ -172,25 +192,6 @@ iframe {
 .button-main-3:hover {
   background-color: #cc8400;
   border-color: #cc8400;
-  cursor: pointer;
-}
-
-.button-alt-2 {
-  display: inline-block;
-  border: 0.1rem solid #374c4F;
-  background-color: #374c4F;
-  border-radius: .5rem;
-  color: #231e1b;
-  font-weight: 600;
-  color: white;
-  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
-  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
-  background-color: transparent;
-}
-
-.button-alt-2:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: #222f31;
   cursor: pointer;
 }
 
@@ -239,7 +240,7 @@ iframe {
 }
 
 .global-nav ul li a:hover, .global-nav ul li a:focus {
-  color: #b8beba;
+  color: #cccccc;
 }
 
 .global-nav ul li:last-child {
@@ -273,12 +274,12 @@ iframe {
   -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
           box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
   display: inline-block;
-  border: 0.1rem solid #13a3c8;
-  background-color: #13a3c8;
+  border: 0.1rem solid #283c37;
+  background-color: #283c37;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #51796F;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   -webkit-transform: tranlateY(0);
@@ -307,22 +308,22 @@ ul.media-links li {
   text-decoration: none;
   height: 1em;
   padding: 0 .5em;
-  border-left: 1px solid #b8beba;
+  border-left: 1px solid whitesmoke;
 }
 
 ul.media-links li a {
   font-size: 2em;
   display: inline-block;
   margin: -.25em 0;
-  color: #b8beba;
+  color: whitesmoke;
 }
 
 ul.media-links li a:hover {
-  color: #374c4F;
+  color: #c2c2c2;
 }
 
 ul.media-links li:last-child {
-  border-right: 1px solid #b8beba;
+  border-right: 1px solid whitesmoke;
 }
 
 body {
@@ -394,16 +395,12 @@ section.tdv {
   z-index: 2;
 }
 
-#contact.background {
-  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
-}
-
 #banner.fade-in {
   background-color: transparent;
 }
 
 #banner {
-  background-color: #0a6487;
+  background-color: #121B26;
   -webkit-transition: background-color 2.5s ease-in-out, -webkit-transform 1s ease-in-out;
   transition: background-color 2.5s ease-in-out, -webkit-transform 1s ease-in-out;
   transition: transform 1s ease-in-out, background-color 2.5s ease-in-out;
@@ -483,16 +480,16 @@ section.tdv {
 }
 
 #banner .content div ul li a {
-  color: white;
+  color: whitesmoke;
 }
 
 #banner .content div ul li a:hover, #banner .content div ul li a:focus, #banner .content div ul li a:active {
-  color: #b8beba;
+  color: #c2c2c2;
 }
 
 #about-me {
-  background: #b8beba;
-  color: #231e1b;
+  background: #19262c;
+  color: whitesmoke;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -504,7 +501,7 @@ section.tdv {
 }
 
 #about-me .content .description {
-  background: whitesmoke;
+  background: #2C424C;
   max-width: 50rem;
   padding: 1rem;
   text-align: center;
@@ -603,7 +600,7 @@ section.tdv {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 1fr;
           flex: 1 0 1fr;
-  background: whitesmoke;
+  background: #2C424C;
   -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
           box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
 }
@@ -631,8 +628,8 @@ section.tdv {
 }
 
 #projects {
-  background: #7c9ea3;
-  color: #231e1b;
+  background: #1a2737;
+  color: whitesmoke;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -725,7 +722,7 @@ section.tdv {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 35%;
           flex: 0 0 35%;
-  background: whitesmoke;
+  background: #2b405a;
   padding: 1rem;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -862,7 +859,7 @@ section.tdv {
   line-height: 1;
   font-weight: 600;
   color: whitesmoke;
-  text-shadow: 0 0 .05rem #000;
+  text-shadow: 0 0 5px #000;
   -webkit-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
 }
@@ -888,8 +885,8 @@ section.tdv {
 
 #contact .content form.gform .form-text-field {
   border: none;
-  background-color: #b8beba;
-  color: #231e1b;
+  background-color: #51796F;
+  color: whitesmoke;
   opacity: .5;
   border-radius: .5rem;
   padding: .5rem;
@@ -921,8 +918,8 @@ section.tdv {
 }
 
 #footer {
-  background: #231e1b;
-  color: #b8beba;
+  background: #0E1411;
+  color: whitesmoke;
   font-size: 1.5rem;
   height: 25.5vh;
   min-height: 10rem;
@@ -945,7 +942,7 @@ section.tdv {
 }
 
 #footer .content li {
-  border-color: #b8beba;
+  border-color: whitesmoke;
 }
 
 #footer .content div {
@@ -954,4 +951,33 @@ section.tdv {
   width: fit-content;
   margin: auto;
 }
-/*# sourceMappingURL=styles.css.map */
+
+::-webkit-input-placeholder {
+  color: lightgrey;
+}
+
+:-ms-input-placeholder {
+  color: lightgrey;
+}
+
+::-ms-input-placeholder {
+  color: lightgrey;
+}
+
+::placeholder {
+  color: lightgrey;
+}
+
+#banner .background {
+  background-image: url("../img/nate-rayfield-336417-unsplash-top.jpg");
+}
+
+#banner .global-nav {
+  background: rgba(0, 0, 0, 0.5);
+  padding-bottom: 0.5rem;
+}
+
+#contact .background {
+  background-image: url("../img/nate-rayfield-336417-unsplash-bot.jpg");
+}
+/*# sourceMappingURL=dark-theme.css.map */
