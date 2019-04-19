@@ -100,11 +100,8 @@ html {
     font-size: 1rem;
     font-family: $fonts;
     color: $main-text;
-    @media (min-width: 1500px) {
-        font-size: 1.33rem;
-    }
     @media (min-width: 2240px) {
-        font-size: 2rem;
+        font-size: 1.33rem;
     }
 }
 
@@ -152,6 +149,7 @@ h2 {
 h3 {
     font-size: 1.3rem;
     font-weight: 600;
+    color: $h3-text;
     i {
         font-size: 1.5rem;
     }
@@ -199,6 +197,17 @@ iframe {
 }
 .button-main-3:hover {
     @include darken-main-hvr($button-3-color);
+}
+
+.button-alt-3 {
+    @include alt-button($button-3-color);
+}
+.button-alt-3:hover {
+    @include darken-alt-hvr($button-3-color);
+}
+
+#banner.rem-transition {
+    transition: none !important;
 }
 
 .global-nav {
@@ -342,6 +351,7 @@ section.tdv {
     z-index: 2;
 }
 
+#banner .background {background-image: $bg-top}
 #banner.fade-in {background-color: transparent}
 #banner {
     background-color: $banner-bg;
@@ -398,6 +408,13 @@ section.tdv {
                 a:hover, a:focus, a:active {
                     color: darken($banner-text, 20%);
                 }
+            }
+            button {
+                margin: 1rem .5rem 0;
+                height: 2rem;
+                width: 6rem;
+                text-shadow: $text-shadow;
+                box-shadow: $shadow;
             }
         }
     }
@@ -577,6 +594,7 @@ section.tdv {
     }
 }
 
+#contact .background {background-image: $bg-bot}
 #contact {
     height: 100vh;
     min-height: (20rem);

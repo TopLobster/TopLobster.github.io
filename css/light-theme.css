@@ -16,19 +16,13 @@ html {
   width: 100%;
   overflow: hidden;
   font-size: 1rem;
-  font-family: Nunito;
+  font-family: Nunito, sans-serif;
   color: #231e1b;
-}
-
-@media (min-width: 1500px) {
-  html {
-    font-size: 1.33rem;
-  }
 }
 
 @media (min-width: 2240px) {
   html {
-    font-size: 2rem;
+    font-size: 1.33rem;
   }
 }
 
@@ -85,6 +79,7 @@ h2 {
 h3 {
   font-size: 1.3rem;
   font-weight: 600;
+  color: #231e1b;
 }
 
 h3 i {
@@ -193,6 +188,30 @@ iframe {
   background-color: #cc8400;
   border-color: #cc8400;
   cursor: pointer;
+}
+
+.button-alt-3 {
+  display: inline-block;
+  border: 0.1rem solid orange;
+  background-color: orange;
+  border-radius: .5rem;
+  color: #231e1b;
+  font-weight: 600;
+  color: whitesmoke;
+  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  background-color: transparent;
+}
+
+.button-alt-3:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #cc8400;
+  cursor: pointer;
+}
+
+#banner.rem-transition {
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 .global-nav {
@@ -395,6 +414,10 @@ section.tdv {
   z-index: 2;
 }
 
+#banner .background {
+  background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
+}
+
 #banner.fade-in {
   background-color: transparent;
 }
@@ -485,6 +508,15 @@ section.tdv {
 
 #banner .content div ul li a:hover, #banner .content div ul li a:focus, #banner .content div ul li a:active {
   color: #c2c2c2;
+}
+
+#banner .content div button {
+  margin: 1rem .5rem 0;
+  height: 2rem;
+  width: 6rem;
+  text-shadow: 0 0 5px #000;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
 }
 
 #about-me {
@@ -805,6 +837,10 @@ section.tdv {
   }
 }
 
+#contact .background {
+  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
+}
+
 #contact {
   height: 100vh;
   min-height: 20rem;
@@ -950,13 +986,5 @@ section.tdv {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
-}
-
-#banner .background {
-  background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
-}
-
-#contact .background {
-  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
 }
 /*# sourceMappingURL=light-theme.css.map */

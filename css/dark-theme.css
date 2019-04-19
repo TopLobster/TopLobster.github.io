@@ -16,19 +16,13 @@ html {
   width: 100%;
   overflow: hidden;
   font-size: 1rem;
-  font-family: Nunito;
-  color: whitesmoke;
-}
-
-@media (min-width: 1500px) {
-  html {
-    font-size: 1.33rem;
-  }
+  font-family: Nunito, sans-serif;
+  color: lightgrey;
 }
 
 @media (min-width: 2240px) {
   html {
-    font-size: 2rem;
+    font-size: 1.33rem;
   }
 }
 
@@ -62,7 +56,7 @@ h1 {
 }
 
 h2 {
-  color: whitesmoke;
+  color: #B5CDD8;
   font-size: 3rem;
   line-height: 1;
   text-align: center;
@@ -72,7 +66,7 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
   height: 2.7rem;
-  border-bottom: 0.125rem solid #94b6c6;
+  border-bottom: 0.125rem solid #72a0b5;
 }
 
 @media (max-width: 32rem) {
@@ -85,6 +79,7 @@ h2 {
 h3 {
   font-size: 1.3rem;
   font-weight: 600;
+  color: #B5CDD8;
 }
 
 h3 i {
@@ -193,6 +188,30 @@ iframe {
   background-color: #cc8400;
   border-color: #cc8400;
   cursor: pointer;
+}
+
+.button-alt-3 {
+  display: inline-block;
+  border: 0.1rem solid orange;
+  background-color: orange;
+  border-radius: .5rem;
+  color: #51796F;
+  font-weight: 600;
+  color: whitesmoke;
+  -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  background-color: transparent;
+}
+
+.button-alt-3:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #cc8400;
+  cursor: pointer;
+}
+
+#banner.rem-transition {
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 .global-nav {
@@ -395,6 +414,10 @@ section.tdv {
   z-index: 2;
 }
 
+#banner .background {
+  background-image: url("../img/nate-rayfield-336417-unsplash-top.jpg");
+}
+
 #banner.fade-in {
   background-color: transparent;
 }
@@ -487,9 +510,18 @@ section.tdv {
   color: #c2c2c2;
 }
 
+#banner .content div button {
+  margin: 1rem .5rem 0;
+  height: 2rem;
+  width: 6rem;
+  text-shadow: 0 0 5px #000;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+          box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
+}
+
 #about-me {
   background: #19262c;
-  color: whitesmoke;
+  color: lightgrey;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -629,7 +661,7 @@ section.tdv {
 
 #projects {
   background: #1a2737;
-  color: whitesmoke;
+  color: lightgrey;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -722,7 +754,7 @@ section.tdv {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 35%;
           flex: 0 0 35%;
-  background: #2b405a;
+  background: #263950;
   padding: 1rem;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -803,6 +835,10 @@ section.tdv {
         -ms-flex-order: 2 !important;
             order: 2 !important;
   }
+}
+
+#contact .background {
+  background-image: url("../img/nate-rayfield-336417-unsplash-bot.jpg");
 }
 
 #contact {
@@ -968,16 +1004,8 @@ section.tdv {
   color: lightgrey;
 }
 
-#banner .background {
-  background-image: url("../img/nate-rayfield-336417-unsplash-top.jpg");
-}
-
 #banner .global-nav {
   background: rgba(0, 0, 0, 0.5);
   padding-bottom: 0.5rem;
-}
-
-#contact .background {
-  background-image: url("../img/nate-rayfield-336417-unsplash-bot.jpg");
 }
 /*# sourceMappingURL=dark-theme.css.map */

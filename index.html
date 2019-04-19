@@ -5,8 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/dark-theme.css">
-        <link rel="alternate-stylesheet" type="text/css" href="css/light-theme.css">
+        <link rel="stylesheet" id="theme" type="text/css" value="light" href="css/light-theme.css">
+        <link rel="alternate-stylesheet" type="text/css" value="dark" href="css/dark-theme.css">
         <!-- <link rel="shortcut icon" type="image" href="img/favicon.ico"> -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <script src="js/form-submission-handler.js" defer></script>
@@ -40,6 +40,7 @@
                             <li><a href="https://github.com/toplobster/" class="fab fa-github"></a></li>
                             <li><a href="#" class="fab fa-linkedin"></a></li>
                         </ul>
+                        <button id="dark-button" class="button-alt-1">Dark?</button><button id="light-button" class="button-alt-3">Or Light?</button>
                     </div>
                 </div>
                 <div class="background"></div>
@@ -110,7 +111,7 @@
                 <div class="content">
                     <h2>Personal Projects</h2>
                     <div class="flex-container">
-                        <div class="project-observer">
+                        <div class="project-observer proj-move">
                             <div class="hover-observer">
                                 <div class="project">
                                     <div class="proj-img" src-lazy="img/finance.jpg"></div>
@@ -129,7 +130,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-observer">
+                        <div class="project-observer proj-move">
                             <div class="hover-observer">
                                 <div class="project">
                                     <div class="proj-img" src-lazy="img/profile.jpg"></div>
@@ -145,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-observer">
+                        <div class="project-observer proj-move">
                             <div class="hover-observer">
                                 <div class="project">
                                     <div class="proj-img" src-lazy="img/calculator.jpg"><iframe src="https://toplobster.github.io/calculator/"></iframe></div>
@@ -164,7 +165,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-observer">
+                        <div class="project-observer proj-move">
                             <div class="hover-observer">
                                 <div class="project">
                                     <div class="proj-img" src-lazy="img/etch-a-sketch.jpg"><iframe src="https://toplobster.github.io/etch-a-sketch/"></iframe></div>
@@ -183,7 +184,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-observer">
+                        <div class="project-observer proj-move">
                             <div class="hover-observer">
                                 <div class="project">
                                     <div class="proj-img" src-lazy="img/old-apple.jpg"></div>
@@ -233,7 +234,7 @@
                         <li><a href="https://github.com/toplobster" class="fab fa-github"></a></li>
                         <li><a href="#" class="fab fa-linkedin"></a></li>
                     </ul>
-                    <p>Background image courtesy<br>of <a id="unsplash" href="https://unsplash.com/@matteocatanese">Unsplash Users</a></p>
+                    <p>Background image courtesy<br>of <a id="unsplash" href="https://unsplash.com/@benkleaphoto">Unsplash Users</a></p>
                 </div>
             </section>
         </main>

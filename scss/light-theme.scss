@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-$fonts: Nunito;
+$fonts: Nunito, sans-serif;
 
 $color1: #0a6487; //blue
 $color2: #13a3c8; //light blue
@@ -39,8 +39,8 @@ $form-text: whitesmoke;
 $shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
 $shadow-big: 0 (8rem/16) (20rem/16) (-4rem/16) #000;
 
+$bg-top: url('../img/matteo-catanese-424968-unsplash-top-blur.jpg');
+$bg-bot: url('../img/matteo-catanese-424968-unsplash-bottom-blur.jpg');
+
 @import "layout.scss";
 
-#banner .background {background-image: url('../img/matteo-catanese-424968-unsplash-top-blur.jpg')}
-
-#contact .background {background-image: url('../img/matteo-catanese-424968-unsplash-bottom-blur.jpg');}

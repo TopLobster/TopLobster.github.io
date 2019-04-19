@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-$fonts: Nunito;
+$fonts: Nunito, sans-serif;
 
 $color1: #2C424C;
 $color2: #5B7B8A;
@@ -12,20 +12,20 @@ $color8: #121B26;
 $color9: #66696A;
 
 $h1-text: whitesmoke;
-$h2-text: whitesmoke;
-$h2-underline: darken($color3, 20%);
-$h3-text: darken($color3, 20%);
-$main-text: whitesmoke;
+$h2-text: $color3;
+$h2-underline: darken($color3, 30%);
+$h3-text: $color3;
+$main-text: lightgrey;
 $text-shadow: 0 0 5px #000;
 $banner-text: whitesmoke;
 $nav-text: white;
 $nav-bg: rgba(0,0,0,.5);
-$button-text: whitesmoke;
+$button-text: white;
 $banner-bg: $color8;
 $about-me-bg: darken($color1, 10%);
 $projects-bg: lighten($color8, 5%);
 $about-me-tile-bg: $color1;
-$projects-tile-bg: lighten($color8, 15%);
+$projects-tile-bg: lighten($color8, 12%);
 $footer-bg: $color5;
 $footer-text: whitesmoke;
 $button-1-color: $color6;
@@ -39,14 +39,13 @@ $form-text: whitesmoke;
 $shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
 $shadow-big: 0 (8rem/16) (20rem/16) (-4rem/16) #000;
 
+$bg-top: url('../img/nate-rayfield-336417-unsplash-top.jpg');
+$bg-bot: url('../img/nate-rayfield-336417-unsplash-bot.jpg');
 @import "layout.scss";
 
 ::placeholder {color:lightgrey;}
 
-#banner .background {background-image: url('../img/nate-rayfield-336417-unsplash-top.jpg')}
 #banner .global-nav {
     background: $nav-bg;
     padding-bottom: 0.5rem;
 }
-
-#contact .background {background-image: url('../img/nate-rayfield-336417-unsplash-bot.jpg');}

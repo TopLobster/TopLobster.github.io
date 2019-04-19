@@ -1,7 +1,14 @@
 "use strict";
 
 function fadeInBanner() {
-    document.querySelector('#banner').classList.add('fade-in');
+    let banner = document.querySelector('#banner');
+    banner.classList.add('rem-transition');
+    banner.classList.remove('fade-in');
+    setTimeout(() => {
+        banner.classList.remove('rem-transition');
+        banner.classList.add('fade-in');
+    }, 1000);
+    return 1;
 }
 
 /* Add and remove the Nav on scroll */
@@ -51,7 +58,10 @@ const observeProject = target => {
     io.observe(target);
 };
 
-document.querySelectorAll('.project-observer').forEach(project => observeProject(project));
+document.querySelectorAll('.project-observer').forEach(project => {
+    observeProject(project);
+    project.classList.remove('proj-move');
+});
 
 /* Keep opacity on filled form element if losing focus */
 document.querySelectorAll('.gform>.form-text-field').forEach((field) => {
@@ -70,8 +80,19 @@ document.querySelector('.gform>input[type=reset]').addEventListener('click', () 
 });
 
 function enableDarkTheme() {
-    document.querySelector("#contact>.background").style.backgroundImage = "url(../img/matteo-catanese-424968-unsplash-bottom-blur.jpg)";
+    fadeInBanner();
+    document.querySelector('#theme').setAttribute('href', 'css/dark-theme.css');
+    document.querySelector('#unsplash').setAttribute('href', 'https://unsplash.com/@n8rayfield');
 }
+
+function enableLightTheme() {
+    fadeInBanner();
+    document.querySelector('#theme').setAttribute('href', 'css/light-theme.css');
+    document.querySelector('#unsplash').setAttribute('href', 'https://unsplash.com/@benkleaphoto');
+}
+
+document.querySelector('#dark-button').addEventListener('click', () => enableDarkTheme());
+document.querySelector('#light-button').addEventListener('click', () => enableLightTheme());
 
 window.onload = () => {
     /* Load in images later */
