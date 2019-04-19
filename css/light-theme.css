@@ -1,4 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+::-webkit-input-placeholder {
+  color: #404040;
+}
+:-ms-input-placeholder {
+  color: #404040;
+}
+::-ms-input-placeholder {
+  color: #404040;
+}
+::placeholder {
+  color: #404040;
+}
+
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -17,7 +30,7 @@ html {
   overflow: hidden;
   font-size: 1rem;
   font-family: Nunito, sans-serif;
-  color: #231e1b;
+  color: #262626;
 }
 
 @media (min-width: 2240px) {
@@ -31,14 +44,14 @@ main {
 }
 
 a, a:visited {
-  color: #13a3c8;
+  color: #2780A9;
   text-decoration: none;
   -webkit-transition: 150ms color linear;
   transition: 150ms color linear;
 }
 
 a:hover, a:active, a:focus {
-  color: #0a6487;
+  color: #1d6180;
 }
 
 h1 {
@@ -56,7 +69,7 @@ h1 {
 }
 
 h2 {
-  color: #231e1b;
+  color: #333333;
   font-size: 3rem;
   line-height: 1;
   text-align: center;
@@ -66,7 +79,7 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
   height: 2.7rem;
-  border-bottom: 0.125rem solid #403731;
+  border-bottom: 0.125rem solid #1a1a1a;
 }
 
 @media (max-width: 32rem) {
@@ -79,7 +92,7 @@ h2 {
 h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #231e1b;
+  color: #333333;
 }
 
 h3 i {
@@ -100,30 +113,30 @@ iframe {
 
 .button-main-1 {
   display: inline-block;
-  border: 0.1rem solid #13a3c8;
-  background-color: #13a3c8;
+  border: 0.1rem solid #2780A9;
+  background-color: #2780A9;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #507E4F;
   font-weight: 600;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .button-main-1:hover {
-  background-color: #0f7d99;
-  border-color: #0f7d99;
+  background-color: #1d6180;
+  border-color: #1d6180;
   cursor: pointer;
 }
 
 .button-alt-1 {
   display: inline-block;
-  border: 0.1rem solid #13a3c8;
-  background-color: #13a3c8;
+  border: 0.1rem solid #2780A9;
+  background-color: #2780A9;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #507E4F;
   font-weight: 600;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   background-color: transparent;
@@ -131,36 +144,36 @@ iframe {
 
 .button-alt-1:hover {
   background-color: rgba(0, 0, 0, 0.3);
-  border-color: #0f7d99;
+  border-color: #1d6180;
   cursor: pointer;
 }
 
 .button-main-2 {
   display: inline-block;
-  border: 0.1rem solid #374c4F;
-  background-color: #374c4F;
+  border: 0.1rem solid #234d28;
+  background-color: #234d28;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #507E4F;
   font-weight: 600;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .button-main-2:hover {
-  background-color: #222f31;
-  border-color: #222f31;
+  background-color: #132a16;
+  border-color: #132a16;
   cursor: pointer;
 }
 
 .button-alt-2 {
   display: inline-block;
-  border: 0.1rem solid #374c4F;
-  background-color: #374c4F;
+  border: 0.1rem solid #234d28;
+  background-color: #234d28;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #507E4F;
   font-weight: 600;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   background-color: transparent;
@@ -168,36 +181,36 @@ iframe {
 
 .button-alt-2:hover {
   background-color: rgba(0, 0, 0, 0.3);
-  border-color: #222f31;
+  border-color: #132a16;
   cursor: pointer;
 }
 
 .button-main-3 {
   display: inline-block;
-  border: 0.1rem solid orange;
-  background-color: orange;
+  border: 0.1rem solid #A95646;
+  background-color: #A95646;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #507E4F;
   font-weight: 600;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .button-main-3:hover {
-  background-color: #cc8400;
-  border-color: #cc8400;
+  background-color: #854437;
+  border-color: #854437;
   cursor: pointer;
 }
 
 .button-alt-3 {
   display: inline-block;
-  border: 0.1rem solid orange;
-  background-color: orange;
+  border: 0.1rem solid #A95646;
+  background-color: #A95646;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #507E4F;
   font-weight: 600;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   background-color: transparent;
@@ -205,11 +218,11 @@ iframe {
 
 .button-alt-3:hover {
   background-color: rgba(0, 0, 0, 0.3);
-  border-color: #cc8400;
+  border-color: #854437;
   cursor: pointer;
 }
 
-#banner.rem-transition {
+.rem-transition {
   -webkit-transition: none !important;
   transition: none !important;
 }
@@ -293,12 +306,12 @@ iframe {
   -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
           box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
   display: inline-block;
-  border: 0.1rem solid #374c4F;
-  background-color: #374c4F;
+  border: 0.1rem solid #234d28;
+  background-color: #234d28;
   border-radius: .5rem;
-  color: #231e1b;
+  color: #507E4F;
   font-weight: 600;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
   -webkit-transform: tranlateY(0);
@@ -415,7 +428,7 @@ section.tdv {
 }
 
 #banner .background {
-  background-image: url("../img/matteo-catanese-424968-unsplash-top-blur.jpg");
+  background-image: url("../img/ben-klea-1199394-unsplash-top.jpg");
 }
 
 #banner.fade-in {
@@ -423,7 +436,7 @@ section.tdv {
 }
 
 #banner {
-  background-color: #0a6487;
+  background-color: #1E5271;
   -webkit-transition: background-color 2.5s ease-in-out, -webkit-transform 1s ease-in-out;
   transition: background-color 2.5s ease-in-out, -webkit-transform 1s ease-in-out;
   transition: transform 1s ease-in-out, background-color 2.5s ease-in-out;
@@ -520,8 +533,8 @@ section.tdv {
 }
 
 #about-me {
-  background: #b8beba;
-  color: #231e1b;
+  background: #bed7e2;
+  color: #262626;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -533,7 +546,7 @@ section.tdv {
 }
 
 #about-me .content .description {
-  background: whitesmoke;
+  background: #e1edf2;
   max-width: 50rem;
   padding: 1rem;
   text-align: center;
@@ -632,7 +645,7 @@ section.tdv {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 1fr;
           flex: 1 0 1fr;
-  background: whitesmoke;
+  background: #e1edf2;
   -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
           box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
 }
@@ -660,8 +673,8 @@ section.tdv {
 }
 
 #projects {
-  background: #7c9ea3;
-  color: #231e1b;
+  background: #83b182;
+  color: #262626;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -754,7 +767,7 @@ section.tdv {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 35%;
           flex: 0 0 35%;
-  background: whitesmoke;
+  background: #c1d8c1;
   padding: 1rem;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -838,7 +851,7 @@ section.tdv {
 }
 
 #contact .background {
-  background-image: url("../img/matteo-catanese-424968-unsplash-bottom-blur.jpg");
+  background-image: url("../img/ben-klea-1199394-unsplash-bot.jpg");
 }
 
 #contact {
@@ -921,8 +934,8 @@ section.tdv {
 
 #contact .content form.gform .form-text-field {
   border: none;
-  background-color: #b8beba;
-  color: whitesmoke;
+  background-color: #9ac2d3;
+  color: #262626;
   opacity: .5;
   border-radius: .5rem;
   padding: .5rem;
@@ -954,8 +967,8 @@ section.tdv {
 }
 
 #footer {
-  background: #231e1b;
-  color: #b8beba;
+  background: #132A16;
+  color: whitesmoke;
   font-size: 1.5rem;
   height: 25.5vh;
   min-height: 10rem;
@@ -978,7 +991,7 @@ section.tdv {
 }
 
 #footer .content li {
-  border-color: #b8beba;
+  border-color: whitesmoke;
 }
 
 #footer .content div {

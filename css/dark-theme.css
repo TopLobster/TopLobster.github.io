@@ -209,7 +209,7 @@ iframe {
   cursor: pointer;
 }
 
-#banner.rem-transition {
+.rem-transition {
   -webkit-transition: none !important;
   transition: none !important;
 }

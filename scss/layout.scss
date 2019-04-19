@@ -116,7 +116,7 @@ a, a:visited {
 }
 
 a:hover, a:active, a:focus {
-    color: $color1;
+    color: darken($link-text, 10%);
 }
 
 h1 {
@@ -206,7 +206,7 @@ iframe {
     @include darken-alt-hvr($button-3-color);
 }
 
-#banner.rem-transition {
+.rem-transition {
     transition: none !important;
 }
 

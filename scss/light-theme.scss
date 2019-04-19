@@ -1,46 +1,48 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 $fonts: Nunito, sans-serif;
 
-$color1: #0a6487; //blue
-$color2: #13a3c8; //light blue
-$color3: #374c4F; //slate blue
-$color4: #b8beba; //light slate blue
-$color5: #cf8b59; //orange
-$color6: #f4c3a3; //light orange
-$color7: #231e1b; //dark brown
-$color8: #000;
-$color9: #000;
+$color1: #C2BEBA;
+$color2: #2780A9;
+$color3: #132A16;
+$color4: #77ACC3;
+$color5: #1E5271;
+$color6: #66585D;
+$color7: #507E4F;
+$color8: #2F5C23;
+$color9: #A95646;
 
 $h1-text: whitesmoke;
-$h2-text: $color7;
-$h2-underline: $color7;
-$h3-text: $color7;
-$main-text: $color7;
+$h2-text: lighten(black, 20%);
+$h2-underline: black;
+$h3-text: lighten(black, 20%);
+$main-text: lighten(black, 15%);
 $text-shadow: 0 0 5px #000;
 $banner-text: whitesmoke;
 $nav-text: white;
 $nav-bg: rgba(0,0,0,.5);
 $button-text: whitesmoke;
-$banner-bg: $color1;
-$about-me-bg: $color4;
-$projects-bg: lighten($color3, 30%);
-$about-me-tile-bg: whitesmoke;
-$projects-tile-bg: whitesmoke;
-$footer-bg: $color7;
-$footer-text: #b8beba;
+$banner-bg: $color5;
+$about-me-bg: lighten($color4, 20%);
+$projects-bg: lighten($color7, 20%);
+$about-me-tile-bg: lighten($color4, 30%);
+$projects-tile-bg: lighten($color7, 40%);
+$footer-bg: $color3;
+$footer-text: whitesmoke;
 $button-1-color: $color2;
-$button-2-color: $color3;
-$button-3-color: orange;
-$button-text: whitesmoke;
+$button-2-color: lighten($color3, 10%);
+$button-3-color: $color9;
+$button-text: white;
 $link-text: $color2;
-$form-box-bg: $color4;
-$form-text: whitesmoke;
+$form-box-bg: lighten($color4, 10%);
+$form-text: lighten(black, 15%);
 
 $shadow: 0 (2rem/16) (5rem/16) (-1rem/16) #000;
 $shadow-big: 0 (8rem/16) (20rem/16) (-4rem/16) #000;
 
-$bg-top: url('../img/matteo-catanese-424968-unsplash-top-blur.jpg');
-$bg-bot: url('../img/matteo-catanese-424968-unsplash-bottom-blur.jpg');
+$bg-top: url('../img/ben-klea-1199394-unsplash-top.jpg');
+$bg-bot: url('../img/ben-klea-1199394-unsplash-bot.jpg');
+
+::placeholder {color:lighten(black, 25%);}
 
 @import "layout.scss";
 
