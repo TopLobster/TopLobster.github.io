@@ -42,7 +42,6 @@ $shadow-big: 0 (8rem/16) (20rem/16) (-4rem/16) #000;
 $bg-top: url('../img/ben-klea-1199394-unsplash-top.jpg');
 $bg-bot: url('../img/ben-klea-1199394-unsplash-bot.jpg');
 
-::placeholder {color:lighten(black, 25%);}
-
 @import "layout.scss";
 
+::placeholder {color:lighten(black, 25%);}

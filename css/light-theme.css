@@ -1,17 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-::-webkit-input-placeholder {
-  color: #404040;
-}
-:-ms-input-placeholder {
-  color: #404040;
-}
-::-ms-input-placeholder {
-  color: #404040;
-}
-::placeholder {
-  color: #404040;
-}
-
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -22,6 +9,10 @@
 
 *:focus {
   outline: none !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -408,8 +399,8 @@ body {
 }
 
 section.tdv {
-  -webkit-transform: translate3d(-100vw, 0, -800px) rotateY(-10deg);
-          transform: translate3d(-100vw, 0, -800px) rotateY(-10deg);
+  -webkit-transform: translate3d(-100vw, 0, -80vw) rotateY(-10deg);
+          transform: translate3d(-100vw, 0, -80vw) rotateY(-10deg);
 }
 
 #banner, #contact {
@@ -441,7 +432,7 @@ section.tdv {
   transition: background-color 2.5s ease-in-out, -webkit-transform 1s ease-in-out;
   transition: transform 1s ease-in-out, background-color 2.5s ease-in-out;
   transition: transform 1s ease-in-out, background-color 2.5s ease-in-out, -webkit-transform 1s ease-in-out;
-  min-height: 25rem;
+  min-height: 40rem;
 }
 
 #banner .background {
@@ -493,15 +484,13 @@ section.tdv {
   color: whitesmoke;
 }
 
-#banner .content div img {
+#banner .content div img.profile-picture {
   border: 0.1875rem solid whitesmoke;
-  height: 5rem;
-  width: 5rem;
+  height: 6rem;
+  width: 6rem;
   display: block;
   margin: 0 auto 1rem;
   border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
 }
 
 #banner .content div p {
@@ -632,8 +621,8 @@ section.tdv {
       -ms-flex-order: 1;
           order: 1;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 30rem;
-          flex: 0 1 30rem;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
 }
 
 #about-me .content .education .education-entry :last-child {
@@ -642,9 +631,9 @@ section.tdv {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 1fr;
-          flex: 1 0 1fr;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
   background: #e1edf2;
   -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
           box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
@@ -714,10 +703,10 @@ section.tdv {
 }
 
 #projects .content .flex-container .project-observer .hover-observer > * {
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  transition: -webkit-transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  transition: -webkit-box-shadow 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, transform 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, transform 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-box-shadow: 0 0.125rem 0.3125rem -0.0625rem #000;
@@ -763,7 +752,6 @@ section.tdv {
 }
 
 #projects .content .flex-container .project-observer .hover-observer .project .proj-desc {
-  vertical-align: center;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 35%;
           flex: 0 0 35%;
@@ -784,10 +772,10 @@ section.tdv {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
 }
 
 #projects .content .flex-container .project-observer .hover-observer .project .proj-desc p {
+  text-align: left;
   margin-bottom: 1rem;
 }
 
@@ -999,5 +987,21 @@ section.tdv {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
+}
+
+::-webkit-input-placeholder {
+  color: #404040;
+}
+
+:-ms-input-placeholder {
+  color: #404040;
+}
+
+::-ms-input-placeholder {
+  color: #404040;
+}
+
+::placeholder {
+  color: #404040;
 }
 /*# sourceMappingURL=light-theme.css.map */
